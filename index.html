@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lithika S. | FPV Control Interface</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  
+  <!-- FPV HUD Overlay Layer -->
+  <div class="hud-layer">
+    <!-- Camera Frame -->
+    <div class="hud-frame top-left"></div>
+    <div class="hud-frame top-right"></div>
+    <div class="hud-frame bottom-left"></div>
+    <div class="hud-frame bottom-right"></div>
+
+    <!-- Center Reticle -->
+    <div class="reticle">
+      <div class="reticle-h"></div>
+      <div class="reticle-v"></div>
+      <div class="reticle-circle"></div>
+    </div>
+
+    <!-- Artificial Horizon / Pitch Ladder -->
+    <div class="pitch-ladder">
+      <div class="ladder-line"><span>+10</span><div class="line"></div><span>+10</span></div>
+      <div class="ladder-line"><span>+05</span><div class="line"></div><span>+05</span></div>
+      <div class="ladder-line center"><span>00</span><div class="line"></div><span>00</span></div>
+      <div class="ladder-line"><span>-05</span><div class="line dashed"></div><span>-05</span></div>
+      <div class="ladder-line"><span>-10</span><div class="line dashed"></div><span>-10</span></div>
+    </div>
+
+    <!-- Data Tapes (Left/Right) -->
+    <div class="tape alt-tape">
+      <div class="tape-label">ALT / m</div>
+      <div class="tape-scale" id="alt-scale"></div>
+      <div class="tape-pointer"><span id="alt-val">124.5</span></div>
+    </div>
+
+    <div class="tape speed-tape">
+      <div class="tape-label">SPD / kn</div>
+      <div class="tape-scale" id="speed-scale"></div>
+      <div class="tape-pointer"><span id="speed-val">42.0</span></div>
+    </div>
+
+    <!-- Top Status Bar -->
+    <div class="top-status">
+      <div class="status-left">
+        <span class="rec-dot"></span> REC <span class="timecode" id="timecode">00:00:00</span>
+      </div>
+      <div class="status-center">
+        UAV-07 LINK: STABLE [LITHIKA S.]
+      </div>
+      <div class="status-right">
+        BAT <div class="battery-bar"><div class="battery-fill"></div></div> 94%
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation (Bottom Control Deck) -->
+  <nav class="control-deck">
+    <button class="deck-btn active" data-target="pane-dossier">
+      <span class="btn-num">01</span> DOSSIER
+    </button>
+    <button class="deck-btn" data-target="pane-systems">
+      <span class="btn-num">02</span> SYSTEMS
+    </button>
+    <button class="deck-btn" data-target="pane-missions">
+      <span class="btn-num">03</span> MISSIONS
+    </button>
+    <button class="deck-btn" data-target="pane-comms">
+      <span class="btn-num">04</span> COMMS
+    </button>
+  </nav>
+
+  <!-- Central Viewport for Content -->
+  <main class="viewport">
+    <div class="static-noise" id="static-overlay"></div>
+
+    <!-- DOSSIER PANE -->
+    <section class="content-pane active" id="pane-dossier">
+      <div class="pane-header">
+        <h2>>> OPERATOR PROFILE</h2>
+      </div>
+      <div class="dossier-layout">
+        <div class="dossier-info">
+          <h1 class="glitch" data-text="LITHIKA SARAVANAKUMAR">LITHIKA SARAVANAKUMAR</h1>
+          <h3>AI & ML / UAV NAVIGATION ENGINEER</h3>
+          <p class="bio">Specializing in GPS-denied navigation, swarm coordination, and computer vision for autonomous robotics. B.Tech AI & ML at Karnavati University (CGPA 9.0).</p>
+          
+          <div class="data-grid">
+            <div class="data-item">
+              <span class="label">LOCATION</span>
+              <span class="value">AHMEDABAD, IN</span>
+            </div>
+            <div class="data-item">
+              <span class="label">CLEARANCE</span>
+              <span class="value">LEVEL-7 (UAV)</span>
+            </div>
+            <div class="data-item">
+              <span class="label">STATUS</span>
+              <span class="value active-status">DEPLOYED</span>
+            </div>
+          </div>
+        </div>
+        <div class="dossier-roles">
+          <div class="role-card">
+            <h4>TECH LEAD @ DRONE MATRX</h4>
+            <p>Building multi-UAV swarm tech and edge processing networks.</p>
+          </div>
+          <div class="role-card">
+            <h4>TECH CONTRIBUTOR @ REUDE TECH</h4>
+            <p>UAV Research, GPS-denied nav & IMU dead reckoning.</p>
+          </div>
+          <div class="role-card">
+            <h4>FOUNDER @ FLIGHTX UAV</h4>
+            <p>Scaled community to 100+ members, leading ROS2 workshops.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEMS PANE -->
+    <section class="content-pane" id="pane-systems">
+      <div class="pane-header">
+        <h2>>> HARDWARE & SOFTWARE CAPABILITIES</h2>
+      </div>
+      <div class="systems-grid">
+        <div class="sys-module">
+          <div class="sys-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="sys-info">
+            <h3>UAV & ROBOTICS</h3>
+            <p>Ardupilot, Pixhawk, ROS2 Humble, MAVLink, SITL Simulation, Sensor Fusion.</p>
+          </div>
+        </div>
+        <div class="sys-module">
+          <div class="sys-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+          </div>
+          <div class="sys-info">
+            <h3>AI & VISION</h3>
+            <p>TensorFlow, PyTorch, Scikit-Learn, OpenCV, DeepSORT. Published researcher in Neural Vision.</p>
+          </div>
+        </div>
+        <div class="sys-module">
+          <div class="sys-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+          </div>
+          <div class="sys-info">
+            <h3>EMBEDDED</h3>
+            <p>ESP32, Raspberry Pi, Microcontrollers, Custom flight-controller hardware.</p>
+          </div>
+        </div>
+        <div class="sys-module">
+          <div class="sys-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="sys-info">
+            <h3>DEVELOPMENT</h3>
+            <p>Python, C/C++, Java, React.js, Node.js, Next.js. Full stack web architecture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSIONS PANE -->
+    <section class="content-pane" id="pane-missions">
+      <div class="pane-header">
+        <h2>>> FLIGHT LOGS & DEPLOYMENTS</h2>
+      </div>
+      <div class="missions-carousel">
+        <div class="mission-card">
+          <div class="m-status">COMPLETE</div>
+          <h3>Drone Simulation Automation</h3>
+          <p>Bash automation framework for UAV simulation via Gazebo + ROS2. Integrated system health monitoring.</p>
+          <a href="https://github.com/Lithika07/DroneSim" target="_blank" class="m-link">GITHUB ACCESS ></a>
+        </div>
+        <div class="mission-card">
+          <div class="m-status active">ACTIVE</div>
+          <h3>Autonomous UAV Docking</h3>
+          <p>AprilTag visual localization and MAVLink offboard control for precision landing in GPS-denied environments. (ISRO IRoC 2026)</p>
+          <span class="m-link restricted">RESTRICTED ></span>
+        </div>
+        <div class="mission-card">
+          <div class="m-status">COMPLETE</div>
+          <h3>VINS-Fusion Localization</h3>
+          <p>Integrated visual-inertial SLAM with onboard UAV systems for real-time trajectory tracking.</p>
+          <a href="https://github.com/Lithika07/VinsFusionNonGPS" target="_blank" class="m-link">GITHUB ACCESS ></a>
+        </div>
+        <div class="mission-card">
+          <div class="m-status">COMPLETE</div>
+          <h3>Genesis Funding: Drone MatrX</h3>
+          <p>Secured ₹4 Lakh from MeitY (GOI) for validating commercial multi-UAV swarm coordination platforms.</p>
+          <span class="m-link">ARCHIVE LOG ></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMS PANE -->
+    <section class="content-pane" id="pane-comms">
+      <div class="pane-header">
+        <h2>>> ESTABLISH UPLINK</h2>
+      </div>
+      <div class="comms-layout">
+        <div class="comms-form-container">
+          <form action="https://formsubmit.co/sarvanan2907@gmail.com" method="POST" class="hud-form">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="input-group">
+              <label>CALLSIGN [NAME]</label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="input-group">
+              <label>FREQUENCY [EMAIL]</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="input-group">
+              <label>TRANSMISSION</label>
+              <textarea name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">SEND TRANSMISSION</button>
+          </form>
+        </div>
+        <div class="comms-nodes">
+          <h3>NETWORK NODES</h3>
+          <a href="https://github.com/Lithika07" target="_blank" class="node-link">
+            <span class="node-icon">GH</span> GITHUB REPOSITORY
+          </a>
+          <a href="https://linkedin.com/in/lithika-s-a8bb23294" target="_blank" class="node-link">
+            <span class="node-icon">LI</span> LINKEDIN PROFILE
+          </a>
+          <a href="mailto:sarvanan2907@gmail.com" class="node-link">
+            <span class="node-icon">EM</span> ENCRYPTED MAIL
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+</html>
