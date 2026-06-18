@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Crosshair, Terminal, Network, Code2, Database, Rocket, ExternalLink, Activity } from 'lucide-react';
+import { Mail, Crosshair, Terminal, Network, Code2, Database, Rocket, ExternalLink, Activity } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import './index.css';
 
 // Framer Motion Variants
@@ -74,10 +75,10 @@ const App = () => {
 
             <div className="social-links">
               <a href="https://github.com/Lithika07" target="_blank" rel="noreferrer" className="social-icon">
-                <Github size={20} />
+                <FaGithub size={20} />
               </a>
               <a href="https://linkedin.com/in/lithika-s-a8bb23294" target="_blank" rel="noreferrer" className="social-icon">
-                <Linkedin size={20} />
+                <FaLinkedin size={20} />
               </a>
               <a href="mailto:sarvanan2907@gmail.com" className="social-icon">
                 <Mail size={20} />
