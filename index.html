@@ -1,803 +1,822 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lithika Saravanakumar — Research Portfolio</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+<script src="./main.js"></script>
 </head>
 <body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</helmet>
+<div style="position:relative;background:#0a0a0f;color:#e9edf2;font-family:Inter,system-ui,sans-serif;min-height:100vh;width:100%;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;">
 
-  <!-- Custom cursor -->
-  <div id="ls-cursor">
-    <div class="cur-ring"></div>
-    <div class="cur-dot"></div>
-  </div>
-
-  <!-- NAV -->
-  <nav id="main-nav">
-    <div class="nav-brand">
-      <svg class="nav-logo" width="26" height="26" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="14" cy="14" r="2" fill="currentColor"/>
-        <line x1="14" y1="10" x2="14" y2="3" stroke="currentColor" stroke-width="1.2"/>
-        <line x1="18" y1="12" x2="23.5" y2="6.5" stroke="currentColor" stroke-width="1.2"/>
-        <line x1="18" y1="16" x2="23.5" y2="21.5" stroke="currentColor" stroke-width="1.2"/>
-        <line x1="14" y1="18" x2="14" y2="25" stroke="currentColor" stroke-width="1.2"/>
-        <line x1="10" y1="16" x2="4.5" y2="21.5" stroke="currentColor" stroke-width="1.2"/>
-        <line x1="10" y1="12" x2="4.5" y2="6.5" stroke="currentColor" stroke-width="1.2"/>
-        <circle cx="14" cy="2.5" r="1.5" fill="currentColor"/>
-        <circle cx="24.5" cy="6" r="1.5" fill="currentColor"/>
-        <circle cx="24.5" cy="22" r="1.5" fill="currentColor"/>
-        <circle cx="14" cy="25.5" r="1.5" fill="currentColor"/>
-        <circle cx="3.5" cy="22" r="1.5" fill="currentColor"/>
-        <circle cx="3.5" cy="6" r="1.5" fill="currentColor"/>
-      </svg>
-      <div class="brand-text">
-        <span class="brand-name">LITHIKA S.</span>
-        <span class="brand-sub">Research Interface v1.0</span>
-      </div>
+  <nav ref="{{ navRef }}" style="position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,56px);border-bottom:1px solid transparent;transition:background .35s ease, backdrop-filter .35s ease, border-color .35s ease;">
+    <a href="#hero" style="display:flex;align-items:center;gap:13px;text-decoration:none;">
+      <span id="swarm-logo" style="position:relative;display:inline-block;width:32px;height:32px;flex:none;">
+        <span style="position:absolute;inset:0;animation:spin 16s linear infinite;">
+          <span style="position:absolute;left:50%;top:50%;width:26px;height:1.5px;margin:-0.75px 0 0 -13px;background:rgba(0,229,204,0.6);transform:rotate(45deg);"></span>
+          <span style="position:absolute;left:50%;top:50%;width:26px;height:1.5px;margin:-0.75px 0 0 -13px;background:rgba(0,229,204,0.6);transform:rotate(-45deg);"></span>
+          <span style="position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid rgba(0,229,204,0.5);transform:translate(-9px,-9px);"><span style="position:absolute;left:50%;top:50%;width:9px;height:1px;margin:-0.5px 0 0 -4.5px;background:#00e5cc;animation:spinr .42s linear infinite;"></span></span>
+          <span style="position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid rgba(168,85,247,0.55);transform:translate(9px,-9px);"><span style="position:absolute;left:50%;top:50%;width:9px;height:1px;margin:-0.5px 0 0 -4.5px;background:#a855f7;animation:spinr .38s linear infinite;"></span></span>
+          <span style="position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid rgba(0,229,204,0.5);transform:translate(9px,9px);"><span style="position:absolute;left:50%;top:50%;width:9px;height:1px;margin:-0.5px 0 0 -4.5px;background:#00e5cc;animation:spinr .44s linear infinite;"></span></span>
+          <span style="position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid rgba(0,229,204,0.5);transform:translate(-9px,9px);"><span style="position:absolute;left:50%;top:50%;width:9px;height:1px;margin:-0.5px 0 0 -4.5px;background:#00e5cc;animation:spinr .4s linear infinite;"></span></span>
+          <span style="position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#00e5cc;animation:corepulse 2.6s ease-in-out infinite;"></span>
+        </span>
+      </span>
+      <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.3em;color:#00e5cc;text-transform:uppercase;">swarm coordination</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:clamp(18px,3vw,38px);">
+      <a href="#about" style="font-size:13.5px;letter-spacing:.02em;color:rgba(233,237,242,0.6);text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">About</a>
+      <a href="#experience" style="font-size:13.5px;letter-spacing:.02em;color:rgba(233,237,242,0.6);text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">Experience</a>
+      <a href="#projects" style="font-size:13.5px;letter-spacing:.02em;color:rgba(233,237,242,0.6);text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">Projects</a>
+      <a href="#research" style="font-size:13.5px;letter-spacing:.02em;color:rgba(233,237,242,0.6);text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">Research</a>
+      <a href="#contact" style="font-size:13.5px;letter-spacing:.02em;color:rgba(233,237,242,0.6);text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">Contact</a>
     </div>
-    <div class="nav-menu">
-      <a href="#profile" class="nav-item">Profile</a>
-      <a href="#experience" class="nav-item">Experience</a>
-      <a href="#projects" class="nav-item">Projects</a>
-      <a href="#stack" class="nav-item">Skills</a>
-      <a href="#publications" class="nav-item">Research</a>
-      <a href="#achievements" class="nav-item">Awards</a>
-      <a href="#leadership" class="nav-item">Leadership</a>
-      <a href="#contact" class="nav-item nav-cta">Contact</a>
-    </div>
-    <div class="nav-online">
-      <span class="online-dot"></span>
-      <span class="online-text">ONLINE</span>
-    </div>
-    <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
-  <!-- Mobile overlay menu -->
-  <div class="mob-overlay" id="mob-overlay">
-    <button class="mob-close" id="mob-close">&#x2715;</button>
-    <a href="#profile" class="mob-link">Profile</a>
-    <a href="#experience" class="mob-link">Experience</a>
-    <a href="#projects" class="mob-link">Projects</a>
-    <a href="#stack" class="mob-link">Skills</a>
-    <a href="#publications" class="mob-link">Research</a>
-    <a href="#achievements" class="mob-link">Awards</a>
-    <a href="#leadership" class="mob-link">Leadership</a>
-    <a href="#contact" class="mob-link">Contact</a>
-  </div>
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-wrap">
-      <div class="hero-left">
-        <div class="hero-eyebrow">// UAV Navigation &nbsp;&middot;&nbsp; Robotics &nbsp;&middot;&nbsp; AI &amp; ML Research</div>
-        <h1 class="hero-name">
-          <span class="name-first">Lithika</span>
-          <span class="name-last">Saravanakumar</span>
-        </h1>
-        <p class="hero-bio">Building autonomous systems at the intersection of UAV navigation, human motion capture, and machine intelligence. Research intern at IIT Gandhinagar's HCR Lab — designing Vicon marker systems for exoskeleton biomechanics.</p>
-        <div class="hero-chips">
-          <div class="h-chip h-chip-active">
-            <span class="chip-dot"></span>IIT-GN HCR Lab
-          </div>
-          <div class="h-chip">CGPA 9.0</div>
-          <div class="h-chip">2 IEEE Papers</div>
-          <div class="h-chip">&#8377;4L GOI Funded</div>
-        </div>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Let's Connect</a>
-          <a href="#projects" class="btn-ghost">View Projects &#8594;</a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="domain-triptych">
-
-          <!-- UAV Panel -->
-          <div class="domain-panel uav-domain">
-            <div class="dp-icon-wrap">
-              <svg class="dp-svg" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-linecap="round">
-                <rect x="31" y="31" width="18" height="18" rx="2" stroke-width="1.8"/>
-                <path d="M31 31 L18 18 M49 31 L62 18 M31 49 L18 62 M49 49 L62 62" stroke-width="1.8"/>
-                <ellipse cx="14" cy="14" rx="8" ry="3.5" transform="rotate(-45 14 14)" stroke-width="1.2"/>
-                <ellipse cx="66" cy="14" rx="8" ry="3.5" transform="rotate(45 66 14)" stroke-width="1.2"/>
-                <ellipse cx="14" cy="66" rx="8" ry="3.5" transform="rotate(45 14 66)" stroke-width="1.2"/>
-                <ellipse cx="66" cy="66" rx="8" ry="3.5" transform="rotate(-45 66 66)" stroke-width="1.2"/>
-                <circle cx="40" cy="40" r="3" fill="currentColor" stroke="none"/>
-                <circle cx="40" cy="40" r="14" stroke-width="0.6" stroke-dasharray="2,5" opacity="0.5"/>
-                <circle cx="40" cy="40" r="22" stroke-width="0.4" stroke-dasharray="2,8" opacity="0.3"/>
-              </svg>
-            </div>
-            <div class="dp-title">UAV AUTONOMY</div>
-            <div class="dp-tags">
-              <span>Ardupilot</span><span>VINS</span><span>ROS2</span><span>ISRO IRoC</span>
-            </div>
-          </div>
-
-          <!-- Robotics / Mocap Panel — FEATURED -->
-          <div class="domain-panel mocap-domain featured-domain">
-            <div class="dp-badge">HCR LAB &#x00B7; IIT-GN</div>
-            <div class="dp-icon-wrap">
-              <svg class="dp-svg" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-linecap="round">
-                <circle cx="40" cy="11" r="6" stroke-width="1.6"/>
-                <line x1="40" y1="17" x2="40" y2="52" stroke-width="1.6"/>
-                <line x1="40" y1="26" x2="21" y2="40" stroke-width="1.6"/>
-                <line x1="40" y1="26" x2="59" y2="40" stroke-width="1.6"/>
-                <line x1="21" y1="40" x2="14" y2="56" stroke-width="1.4"/>
-                <line x1="59" y1="40" x2="66" y2="56" stroke-width="1.4"/>
-                <line x1="40" y1="52" x2="29" y2="70" stroke-width="1.6"/>
-                <line x1="40" y1="52" x2="51" y2="70" stroke-width="1.6"/>
-                <circle class="vm" cx="21" cy="40" r="4" fill="currentColor" stroke="none"/>
-                <circle class="vm" cx="59" cy="40" r="4" fill="currentColor" stroke="none"/>
-                <circle class="vm" cx="40" cy="26" r="3" fill="currentColor" stroke="none"/>
-                <circle class="vm" cx="40" cy="52" r="4" fill="currentColor" stroke="none"/>
-                <circle class="vm" cx="29" cy="70" r="3.5" fill="currentColor" stroke="none"/>
-                <circle class="vm" cx="51" cy="70" r="3.5" fill="currentColor" stroke="none"/>
-                <circle class="vm-ring" cx="21" cy="40" r="9" stroke-width="0.8" opacity="0.4" fill="none"/>
-                <circle class="vm-ring" cx="59" cy="40" r="9" stroke-width="0.8" opacity="0.4" fill="none"/>
-              </svg>
-            </div>
-            <div class="dp-title">ROBOTICS &amp; MOCAP</div>
-            <div class="dp-tags">
-              <span>Vicon</span><span>OpenSim</span><span>Exoskeleton</span><span>Kinematics</span>
-            </div>
-          </div>
-
-          <!-- AI / ML Panel -->
-          <div class="domain-panel ai-domain">
-            <div class="dp-icon-wrap">
-              <svg class="dp-svg" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-linecap="round">
-                <circle cx="12" cy="20" r="5" stroke-width="1.5"/>
-                <circle cx="12" cy="40" r="5" stroke-width="1.5"/>
-                <circle cx="12" cy="60" r="5" stroke-width="1.5"/>
-                <circle cx="40" cy="14" r="5" stroke-width="1.5"/>
-                <circle cx="40" cy="33" r="5" stroke-width="1.5"/>
-                <circle cx="40" cy="52" r="5" stroke-width="1.5"/>
-                <circle cx="40" cy="68" r="5" stroke-width="1.5"/>
-                <circle cx="68" cy="28" r="5.5" fill="currentColor" stroke="none" opacity="0.9"/>
-                <circle cx="68" cy="52" r="5.5" fill="currentColor" stroke="none" opacity="0.9"/>
-                <line x1="17" y1="20" x2="35" y2="14" stroke-width="0.7" opacity="0.5"/>
-                <line x1="17" y1="20" x2="35" y2="33" stroke-width="0.7" opacity="0.5"/>
-                <line x1="17" y1="40" x2="35" y2="33" stroke-width="0.7" opacity="0.5"/>
-                <line x1="17" y1="40" x2="35" y2="52" stroke-width="0.7" opacity="0.5"/>
-                <line x1="17" y1="60" x2="35" y2="52" stroke-width="0.7" opacity="0.5"/>
-                <line x1="17" y1="60" x2="35" y2="68" stroke-width="0.7" opacity="0.5"/>
-                <line x1="45" y1="14" x2="62.5" y2="28" stroke-width="0.7" opacity="0.5"/>
-                <line x1="45" y1="33" x2="62.5" y2="28" stroke-width="0.7" opacity="0.5"/>
-                <line x1="45" y1="52" x2="62.5" y2="52" stroke-width="0.7" opacity="0.5"/>
-                <line x1="45" y1="68" x2="62.5" y2="52" stroke-width="0.7" opacity="0.5"/>
-              </svg>
-            </div>
-            <div class="dp-title">AI &amp; MACHINE LEARNING</div>
-            <div class="dp-tags">
-              <span>PyTorch</span><span>YOLOv8</span><span>IEEE</span><span>GenAI</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
+  <section id="hero" style="position:relative;min-height:100vh;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+    <canvas ref="{{ heroCanvas }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+    <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.016) 0px,rgba(255,255,255,0.016) 1px,transparent 1px,transparent 3px);opacity:.55;"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 50%,transparent 38%,rgba(10,10,15,0.55) 100%);"></div>
+    <div style="position:relative;z-index:3;text-align:center;padding:0 24px;pointer-events:none;">
+      <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.42em;color:#00e5cc;margin-bottom:26px;text-indent:.42em;opacity:.85;">F R O M&nbsp;&nbsp;I N S I D E&nbsp;&nbsp;T H E&nbsp;&nbsp;S W A R M</div>
+      <h1 style="font-size:clamp(46px,9.5vw,128px);line-height:0.94;font-weight:600;letter-spacing:-0.035em;margin:0;color:#f3f6f9;">Lithika Saravanakumar</h1>
+      <p style="margin:28px auto 0;max-width:540px;font-size:clamp(15px,2.1vw,20px);font-weight:300;line-height:1.5;color:rgba(233,237,242,0.72);">Building Intelligent Machines Across AI, Robotics &amp; Autonomous Flight</p>
     </div>
-    <div class="hero-scroll-cue">
-      <span class="scroll-arrow">&#8595;</span>
-      <span class="scroll-label">Scroll to explore</span>
+    <a href="#about" style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;animation:bob 2.6s ease-in-out infinite;">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.28em;color:rgba(233,237,242,0.5);">scroll</span>
+      <span style="width:1px;height:34px;background:linear-gradient(180deg,#00e5cc,transparent);"></span>
+    </a>
+  </section>
+
+  <section id="about" style="scroll-margin-top:80px;max-width:1180px;margin:0 auto;padding:clamp(90px,13vh,150px) clamp(20px,5vw,56px);">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;color:#00e5cc;margin-bottom:18px;">01 — About</div>
+    <div style="display:flex;gap:clamp(40px,6vw,84px);flex-wrap:wrap;align-items:center;">
+      <div style="flex:1 1 340px;min-width:300px;">
+        <h2 style="font-size:clamp(26px,3.6vw,40px);font-weight:600;letter-spacing:-0.025em;line-height:1.12;margin:0 0 26px;color:#f3f6f9;">I build drones that navigate, localize, and coordinate — even when GPS goes dark.</h2>
+        <p style="font-size:16px;line-height:1.72;font-weight:300;color:rgba(233,237,242,0.74);margin:0 0 18px;max-width:520px;">I'm an Artificial Intelligence &amp; Machine Learning undergrad at Karnavati University, researching UAV navigation where GPS isn't an option — IMU dead-reckoning, visual-inertial SLAM, and the embedded systems that run it all onboard.</p>
+        <p style="font-size:16px;line-height:1.72;font-weight:300;color:rgba(233,237,242,0.74);margin:0 0 34px;max-width:520px;">Currently Technical Lead at Drone MatrX, building a multi-UAV swarm coordination platform, and founder of the 100+ member FlightX UAV community.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:13px 16px;align-items:baseline;max-width:540px;text-transform:uppercase;letter-spacing:0.02em;">
+          <span style="font-size:30px;font-weight:600;color:#00e5cc;letter-spacing:-0.02em;">ardupilot</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">pixhawk</span>
+          <span style="font-size:30px;font-weight:600;color:#00e5cc;letter-spacing:-0.02em;">ros2</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">mavlink</span>
+          <span style="font-size:30px;font-weight:600;color:#00e5cc;letter-spacing:-0.02em;">non-gps navigation</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">sensor fusion</span>
+          <span style="font-size:30px;font-weight:600;color:#a855f7;letter-spacing:-0.02em;">swarm coordination</span>
+          <span style="font-size:16px;font-weight:400;color:rgba(233,237,242,0.5);">pid tuning</span>
+          <span style="font-size:30px;font-weight:600;color:#00e5cc;letter-spacing:-0.02em;">visual-inertial slam</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">computer vision</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">esp32</span>
+          <span style="font-size:16px;font-weight:400;color:rgba(233,237,242,0.5);">sitl</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">python</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">c++</span>
+          <span style="font-size:23px;font-weight:500;color:rgba(233,237,242,0.86);">tensorflow</span>
+          <span style="font-size:16px;font-weight:400;color:rgba(233,237,242,0.5);">pytorch</span>
+          <span style="font-size:16px;font-weight:400;color:rgba(233,237,242,0.5);">raspberry pi</span>
+          <span style="font-size:16px;font-weight:400;color:rgba(233,237,242,0.5);">embedded c</span>
+        </div>
+      </div>
+      <div style="flex:1 1 320px;min-width:280px;display:flex;justify-content:center;">
+        <div style="position:relative;width:100%;max-width:400px;aspect-ratio:1/1.08;border:1px solid rgba(0,229,204,0.14);border-radius:14px;overflow:hidden;background:linear-gradient(180deg,rgba(0,229,204,0.03),rgba(168,85,247,0.03));">
+          <canvas ref="{{ portraitCanvas }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+          <div style="position:absolute;left:14px;bottom:12px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.16em;color:rgba(233,237,242,0.32);">Live · Multi-UAV Formation</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROFILE (01) -->
-  <section id="profile" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">01</span><h2>Research Profile</h2></div>
-    </div>
-    <div class="profile-grid">
-      <div class="profile-photo-col">
-        <div class="photo-wrap">
-          <div class="profile-avatar">
-            <span class="avatar-initials">LS</span>
-            <svg class="avatar-deco" viewBox="0 0 120 120" fill="none">
-              <circle cx="60" cy="60" r="22" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
-              <circle cx="60" cy="60" r="10" fill="currentColor" opacity="0.2"/>
-              <line x1="60" y1="38" x2="60" y2="18" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="76" y1="45" x2="92" y2="29" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="76" y1="75" x2="92" y2="91" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="60" y1="82" x2="60" y2="102" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="44" y1="75" x2="28" y2="91" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="44" y1="45" x2="28" y2="29" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <circle cx="60" cy="16" r="4" fill="currentColor" opacity="0.6"/>
-              <circle cx="93" cy="28" r="4" fill="currentColor" opacity="0.6"/>
-              <circle cx="93" cy="92" r="4" fill="currentColor" opacity="0.6"/>
-              <circle cx="60" cy="104" r="4" fill="currentColor" opacity="0.6"/>
-              <circle cx="27" cy="92" r="4" fill="currentColor" opacity="0.6"/>
-              <circle cx="27" cy="28" r="4" fill="currentColor" opacity="0.6"/>
-            </svg>
+  <section id="experience" style="scroll-margin-top:80px;max-width:1180px;margin:0 auto;padding:clamp(70px,10vh,120px) clamp(20px,5vw,56px);">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;color:#00e5cc;margin-bottom:18px;">02 — Experience</div>
+    <h2 style="font-size:clamp(26px,3.6vw,40px);font-weight:600;letter-spacing:-0.025em;margin:0 0 40px;color:#f3f6f9;">Building, in the Lab and the Field</h2>
+    <div style="display:flex;gap:clamp(40px,6vw,72px);flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:2 1 460px;min-width:300px;">
+        <div style="position:relative;padding:0 0 28px 26px;border-left:1px solid rgba(255,255,255,0.1);">
+          <span style="position:absolute;left:-5px;top:3px;width:9px;height:9px;border-radius:50%;background:#00e5cc;"></span>
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+            <span style="font-size:17px;font-weight:600;color:#f3f6f9;letter-spacing:-0.01em;">Technical Lead</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:#00e5cc;text-transform:uppercase;">Present</span>
           </div>
-          <div class="photo-ring-1"></div>
-          <div class="photo-ring-2"></div>
+          <div style="font-size:13.5px;color:rgba(233,237,242,0.62);margin:4px 0 12px;">Drone MatrX · Remote</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Multi-UAV swarm coordination — a distributed platform for real-time telemetry &amp; synchronized decision-making across 3+ drones.</span></div>
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Cut onboard perception latency ~40% with embedded edge pipelines, eliminating cloud dependency.</span></div>
+          </div>
         </div>
-        <div class="photo-chips">
-          <span class="p-chip">ID: LS-001</span>
-          <span class="p-chip active-chip">&#x25CF; ACTIVE RESEARCHER</span>
-          <span class="p-chip">Batch 2027</span>
+
+        <div style="position:relative;padding:0 0 28px 26px;border-left:1px solid rgba(255,255,255,0.1);">
+          <span style="position:absolute;left:-5px;top:3px;width:9px;height:9px;border-radius:50%;background:#00e5cc;"></span>
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+            <span style="font-size:17px;font-weight:600;color:#f3f6f9;letter-spacing:-0.01em;">Research Member</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:#00e5cc;text-transform:uppercase;">Past</span>
+          </div>
+          <div style="font-size:13.5px;color:rgba(233,237,242,0.62);margin:4px 0 12px;">HCR Lab (Human-Centered Robotics Lab)</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Contributed to autonomous UAV operations, human-robot interaction, and localized navigation research.</span></div>
+          </div>
+        </div>
+
+        <div style="position:relative;padding:0 0 28px 26px;border-left:1px solid rgba(255,255,255,0.1);">
+          <span style="position:absolute;left:-5px;top:3px;width:9px;height:9px;border-radius:50%;background:#00e5cc;"></span>
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+            <span style="font-size:17px;font-weight:600;color:#f3f6f9;letter-spacing:-0.01em;">Founder &amp; Lead</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:#00e5cc;text-transform:uppercase;">Present</span>
+          </div>
+          <div style="font-size:13.5px;color:rgba(233,237,242,0.62);margin:4px 0 12px;">FlightX UAV Community · Karnavati University</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Founded &amp; scaled a 100+ member UAV community, running workshops on ROS2, autonomous navigation &amp; drone systems.</span></div>
+          </div>
+        </div>
+        <div style="position:relative;padding:0 0 28px 26px;border-left:1px solid rgba(255,255,255,0.1);">
+          <span style="position:absolute;left:-5px;top:3px;width:9px;height:9px;border-radius:50%;background:#00e5cc;"></span>
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+            <span style="font-size:17px;font-weight:600;color:#f3f6f9;letter-spacing:-0.01em;">Technical Research Contributor</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:#00e5cc;text-transform:uppercase;">Oct 2025 – Mar 2026</span>
+          </div>
+          <div style="font-size:13.5px;color:rgba(233,237,242,0.62);margin:4px 0 12px;">Reude Technologies · Remote</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Researched GPS-denied UAV navigation — IMU dead-reckoning &amp; embedded robotics for autonomous flight.</span></div>
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Optimized IMU + camera sensor-fusion pipelines and onboard hardware performance for navigation prototypes.</span></div>
+          </div>
+        </div>
+        <div style="position:relative;padding:0 0 0 26px;border-left:1px solid rgba(255,255,255,0.1);">
+          <span style="position:absolute;left:-5px;top:3px;width:9px;height:9px;border-radius:50%;background:#00e5cc;"></span>
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+            <span style="font-size:17px;font-weight:600;color:#f3f6f9;letter-spacing:-0.01em;">Software Development Intern</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:#00e5cc;text-transform:uppercase;">Jul – Dec 2025</span>
+          </div>
+          <div style="font-size:13.5px;color:rgba(233,237,242,0.62);margin:4px 0 12px;">BlackPapers Sarthies · Remote</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Migrated 20+ frontend components from React to Next.js, improving load performance &amp; SEO.</span></div>
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.55;">▸</span><span style="font-size:13.5px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.72);">Optimized REST APIs &amp; backend data pipelines in PHP for faster, more reliable processing.</span></div>
+          </div>
         </div>
       </div>
-      <div class="profile-data-col">
-        <div class="data-table">
-          <div class="dt-row">
-            <span class="dt-key">Name</span>
-            <span class="dt-val">Lithika Saravanakumar</span>
+      <div style="flex:1 1 280px;min-width:260px;display:flex;flex-direction:column;gap:18px;">
+        <div style="border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 22px 24px;background:rgba(16,17,26,0.45);">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.2em;color:#00e5cc;text-transform:uppercase;">Education</div>
+          <div style="margin-top:14px;">
+            <div style="font-size:15px;font-weight:600;color:#f3f6f9;">Karnavati University</div>
+            <div style="font-size:13px;font-weight:300;color:rgba(233,237,242,0.66);margin-top:3px;">B.Tech · Artificial Intelligence &amp; Machine Learning</div>
+            <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#00e5cc;margin-top:6px;">CGPA 9.0 · 2023 – 2027</div>
           </div>
-          <div class="dt-row">
-            <span class="dt-key">Location</span>
-            <span class="dt-val">Ahmedabad, Gujarat, India</span>
-          </div>
-          <div class="dt-row">
-            <span class="dt-key">University</span>
-            <span class="dt-val">Karnavati University (UIT)</span>
-          </div>
-          <div class="dt-row">
-            <span class="dt-key">Program</span>
-            <span class="dt-val">B.Tech Artificial Intelligence &amp; ML &mdash; 2027</span>
-          </div>
-          <div class="dt-row">
-            <span class="dt-key">CGPA</span>
-            <span class="dt-val highlight-val">9.0 / 10.0</span>
-          </div>
-          <div class="dt-row">
-            <span class="dt-key">Research Lab</span>
-            <span class="dt-val highlight-val">HCR Lab &mdash; IIT Gandhinagar</span>
-          </div>
-          <div class="dt-row">
-            <span class="dt-key">Domains</span>
-            <span class="dt-val">UAV Autonomy &middot; Robotics &middot; Motion Capture &middot; AI/ML</span>
-          </div>
-          <div class="dt-row">
-            <span class="dt-key">Email</span>
-            <span class="dt-val"><a href="mailto:sarvanan2907@gmail.com">sarvanan2907@gmail.com</a></span>
+          <div style="height:1px;background:rgba(255,255,255,0.08);margin:16px 0;"></div>
+          <div>
+            <div style="font-size:14px;font-weight:500;color:#eef2f6;">Seventh Day Adventist Hr. Sec. School</div>
+            <div style="font-size:12.5px;font-weight:300;color:rgba(233,237,242,0.6);margin-top:3px;">Class XII — 92.2%&nbsp;&nbsp;·&nbsp;&nbsp;Class X — 98.2%</div>
           </div>
         </div>
-        <div class="profile-stats">
-          <div class="pstat">
-            <span class="pstat-val">9.0</span>
-            <span class="pstat-key">CGPA</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">2</span>
-            <span class="pstat-key">IEEE Papers</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">&#8377;4L</span>
-            <span class="pstat-key">GOI Funded</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">5+</span>
-            <span class="pstat-key">Hackathons</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">3</span>
-            <span class="pstat-key">Internships</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">100+</span>
-            <span class="pstat-key">FlightX Members</span>
+        <div style="border:1px solid rgba(168,85,247,0.2);border-radius:14px;padding:22px;background:rgba(16,17,26,0.45);">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.2em;color:#a855f7;text-transform:uppercase;">Achievements</div>
+          <div style="margin-top:15px;display:flex;flex-direction:column;gap:15px;">
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#a855f7;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5;">▸</span><span style="font-size:13px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.74);"><span style="color:#f3f6f9;font-weight:500;">₹4L Genesis funding</span> from MeitY (Govt. of India) for Drone MatrX — validating a multi-UAV swarm platform.</span></div>
+            <div style="display:flex;gap:10px;"><span style="flex:none;color:#a855f7;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.5;">▸</span><span style="font-size:13px;line-height:1.55;font-weight:300;color:rgba(233,237,242,0.74);"><span style="color:#f3f6f9;font-weight:500;">5+ Code-A-Thon wins</span> across inter-college &amp; external competitive programming contests.</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE (02) -->
-  <section id="experience" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">02</span><h2>Research Deployments</h2></div>
-    </div>
-    <div class="timeline">
-
-      <!-- HCR Lab — ACTIVE (first) -->
-      <div class="tl-entry tl-active">
-        <div class="tl-track">
-          <div class="tl-dot tl-dot-active"></div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-card tl-card-active">
-          <div class="tl-card-top">
-            <div class="tl-org-info">
-              <h3>HCR Lab &mdash; IIT Gandhinagar</h3>
-              <p class="tl-role">Research Intern &middot; Robotics &amp; Biomechanics</p>
-              <p class="tl-period">May 2026 &ndash; Present</p>
+  <section id="projects" style="scroll-margin-top:80px;max-width:1180px;margin:0 auto;padding:clamp(70px,10vh,120px) clamp(20px,5vw,56px);">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;color:#00e5cc;margin-bottom:18px;">03 — Projects</div>
+    <h2 style="font-size:clamp(26px,3.6vw,40px);font-weight:600;letter-spacing:-0.025em;margin:0 0 8px;color:#f3f6f9;">A Mesh of Work</h2>
+    <p style="font-size:15px;font-weight:300;color:rgba(233,237,242,0.55);margin:0 0 12px;">Each node is a project — hover to read it. Related work stays linked as the graph drifts.</p>
+    <div ref="{{ projectsContainer }}" style="position:relative;width:100%;height:clamp(440px,58vh,560px);">
+      <canvas ref="{{ projectsCanvas }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;"></canvas>
+      <sc-for list="{{ projectNodes }}" as="node" hint-placeholder-count="6">
+        <div data-node="true" style="{{ node.wrapStyle }}" onMouseEnter="{{ node.onEnter }}" onMouseLeave="{{ node.onLeave }}">
+          <div style="{{ node.dotStyle }}"></div>
+          <div style="{{ node.labelStyle }}">{{ node.title }}</div>
+          <div style="{{ node.cardStyle }}">
+            <div style="font-size:17px;font-weight:600;letter-spacing:-0.01em;color:#f3f6f9;">{{ node.title }}</div>
+            <div style="font-size:13px;line-height:1.5;font-weight:300;color:rgba(233,237,242,0.66);">{{ node.desc }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;">
+              <sc-for list="{{ node.stack }}" as="b" hint-placeholder-count="3">
+                <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.02em;color:#00e5cc;border:1px solid rgba(0,229,204,0.28);border-radius:5px;padding:3px 7px;">{{ b }}</span>
+              </sc-for>
             </div>
-            <span class="tl-badge tl-badge-active">ACTIVE</span>
+            <a href="{{ node.link }}" style="margin-top:auto;font-size:12.5px;font-weight:500;color:#a855f7;text-decoration:none;letter-spacing:.01em;">{{ node.linkLabel }}</a>
           </div>
-          <div class="tl-tags">
-            <span>Vicon Systems</span><span>OpenSim</span><span>Exoskeleton</span>
-            <span>Custom Marker Design</span><span>Kinematics</span><span>Musculoskeletal Modeling</span>
-          </div>
-          <ul class="tl-bullets">
-            <li>Designing custom retroreflective marker configurations for lower-limb exoskeleton motion capture using Vicon optical tracking systems at IIT-GN HCR Lab.</li>
-            <li>Building and validating musculoskeletal models in OpenSim to analyze real-time joint kinematics, muscle forces, and exoskeleton interaction dynamics during assisted gait.</li>
-          </ul>
         </div>
-      </div>
-
-      <!-- Reude Technologies — COMPLETE -->
-      <div class="tl-entry">
-        <div class="tl-track">
-          <div class="tl-dot"></div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-card">
-          <div class="tl-card-top">
-            <div class="tl-org-info">
-              <h3>Reude Technologies</h3>
-              <p class="tl-role">Technical Research Contributor &middot; UAV Navigation</p>
-              <p class="tl-period">Oct 2025 &ndash; Mar 2026</p>
-            </div>
-            <span class="tl-badge">COMPLETE</span>
-          </div>
-          <div class="tl-tags">
-            <span>VINS-Fusion</span><span>MAVLink</span><span>ROS2</span>
-            <span>Gazebo SITL</span><span>IMU Fusion</span><span>GPS-denied Navigation</span>
-          </div>
-          <ul class="tl-bullets">
-            <li>Implemented Visual-Inertial Navigation System (VINS-Fusion) pipelines for GPS-denied UAV autonomy, integrating synchronized camera and IMU data for 6-DOF real-time state estimation.</li>
-            <li>Developed MAVLink offboard control and ROS2-based autonomy modules; validated flight behavior through Gazebo SITL simulation prior to hardware deployment.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- BlackPapers — COMPLETE (last, no line) -->
-      <div class="tl-entry tl-last">
-        <div class="tl-track">
-          <div class="tl-dot"></div>
-        </div>
-        <div class="tl-card">
-          <div class="tl-card-top">
-            <div class="tl-org-info">
-              <h3>BlackPapers Sarthies (P) Ltd.</h3>
-              <p class="tl-role">Software Development Intern</p>
-              <p class="tl-period">Jul 2025 &ndash; Dec 2025</p>
-            </div>
-            <span class="tl-badge">COMPLETE</span>
-          </div>
-          <div class="tl-tags">
-            <span>Next.js</span><span>React.js</span><span>REST APIs</span>
-            <span>SQL</span><span>Node.js</span><span>Full-Stack Dev</span>
-          </div>
-          <ul class="tl-bullets">
-            <li>Developed content management and legal document handling platforms using Next.js and REST APIs, supporting real-time multi-user collaboration workflows.</li>
-            <li>Implemented SQL-based data pipelines and backend logic with React.js frontend integration; delivered production-ready features across multiple sprint cycles.</li>
-          </ul>
-        </div>
-      </div>
-
+      </sc-for>
     </div>
   </section>
 
-  <!-- PROJECTS (03) — Active first -->
-  <section id="projects" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">03</span><h2>Research Projects</h2></div>
-    </div>
-    <div class="proj-grid">
-
-      <div class="proj-card proj-active">
-        <div class="proj-bar proj-bar-active"></div>
-        <div class="proj-meta-row">
-          <span class="proj-badge proj-badge-active">&#x25CF; ACTIVE DEV</span>
-          <span class="proj-org">ISRO IRoC 2026</span>
+  <section id="research" style="scroll-margin-top:80px;position:relative;overflow:hidden;">
+    <canvas ref="{{ researchCanvas }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0.5;pointer-events:none;"></canvas>
+    <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:clamp(70px,10vh,120px) clamp(20px,5vw,56px);">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;color:#00e5cc;margin-bottom:18px;">04 — Research</div>
+      <h2 style="font-size:clamp(26px,3.6vw,40px);font-weight:600;letter-spacing:-0.025em;margin:0 0 34px;color:#f3f6f9;">Selected Publications</h2>
+      <div style="border-top:1px solid rgba(255,255,255,0.08);">
+        <div style="display:flex;align-items:baseline;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:15px;line-height:1;transform:translateY(5px);">▸</span>
+          <span style="flex:1 1 auto;display:flex;flex-direction:column;gap:7px;">
+            <span style="font-size:clamp(16px,2vw,20px);font-weight:400;color:#eef2f6;letter-spacing:-0.01em;line-height:1.3;">Foundational Study of Topological Indicators &amp; Neural Vision Models for Enhanced UAV Navigation</span>
+            <span style="font-size:13px;font-weight:300;line-height:1.55;color:rgba(233,237,242,0.5);">Achieved 88% Navigation Accuracy on the EuRoC MAV Dataset with Lower Compute Than Traditional SLAM</span>
+          </span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.14em;color:rgba(233,237,242,0.58);min-width:108px;text-align:right;text-transform:uppercase;">IEEE ICBDML</span>
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#00e5cc;min-width:44px;text-align:right;">2026</span>
         </div>
-        <h3 class="proj-title">Autonomous UAV Docking System</h3>
-        <p class="proj-desc">AprilTag-based precision autonomous landing for return-to-base (RTB) missions. Visual fiducial localization integrated with MAVLink offboard control achieves centimeter-level docking accuracy. Selected in Top 250 of 2,800 teams at ISRO IRoC 2026.</p>
-        <div class="proj-tech">
-          <span>AprilTag</span><span>MAVLink</span><span>ROS2</span><span>Gazebo</span><span>PX4</span><span>OpenCV</span>
+        <div style="display:flex;align-items:baseline;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:15px;line-height:1;transform:translateY(5px);">▸</span>
+          <span style="flex:1 1 auto;display:flex;flex-direction:column;gap:7px;">
+            <span style="font-size:clamp(16px,2vw,20px);font-weight:400;color:#eef2f6;letter-spacing:-0.01em;line-height:1.3;">Machine Learning Models for Short-Term Weather Forecasting</span>
+            <span style="font-size:13px;font-weight:300;line-height:1.55;color:rgba(233,237,242,0.5);">Regression &amp; Ensemble Models for Hourly Prediction on Historical Meteorological Data</span>
+          </span>
+          <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.14em;color:rgba(233,237,242,0.58);min-width:108px;text-align:right;text-transform:uppercase;">IEEE ICBDML</span>
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#00e5cc;min-width:44px;text-align:right;">2026</span>
         </div>
-        <div class="proj-footer">
-          <a href="#" class="proj-link">Restricted &#x2197;</a>
-        </div>
-      </div>
-
-      <div class="proj-card proj-active">
-        <div class="proj-bar proj-bar-active"></div>
-        <div class="proj-meta-row">
-          <span class="proj-badge proj-badge-active">&#x25CF; ACTIVE DEV</span>
-          <span class="proj-org">Custom Hardware Build</span>
-        </div>
-        <h3 class="proj-title">Ardupilot Quadcopter &mdash; Full Custom Build</h3>
-        <p class="proj-desc">Complete quadcopter assembly with Pixhawk flight controller and ESP32 co-processor. Includes firmware configuration, ESC calibration, PID tuning, and outdoor field testing. Stable autonomous hovering and GPS waypoint navigation achieved.</p>
-        <div class="proj-tech">
-          <span>Ardupilot</span><span>Pixhawk</span><span>ESP32</span><span>PID Tuning</span><span>MAVLink</span><span>Mission Planner</span>
-        </div>
-        <div class="proj-footer">
-          <a href="https://github.com/Lithika07/Ardupilot" target="_blank" class="proj-link">GitHub &#x2197;</a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-bar"></div>
-        <div class="proj-meta-row">
-          <span class="proj-badge">COMPLETE</span>
-          <span class="proj-org">Research &mdash; UAV Navigation</span>
-        </div>
-        <h3 class="proj-title">VINS-Fusion Visual-Inertial Localization</h3>
-        <p class="proj-desc">Deployed VINS-Fusion for visual-inertial odometry in GPS-denied indoor environments. Camera and IMU fusion delivers accurate 6-DOF state estimation with real-time ROS2 integration, enabling robust autonomous navigation without GPS.</p>
-        <div class="proj-tech">
-          <span>VINS-Fusion</span><span>ROS2</span><span>IMU Fusion</span><span>Camera Calibration</span><span>SLAM</span>
-        </div>
-        <div class="proj-footer">
-          <a href="https://github.com/Lithika07/VINS-Fusion" target="_blank" class="proj-link">GitHub &#x2197;</a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-bar"></div>
-        <div class="proj-meta-row">
-          <span class="proj-badge">COMPLETE</span>
-          <span class="proj-org">R&amp;D &mdash; Simulation Pipeline</span>
-        </div>
-        <h3 class="proj-title">Drone Sim Automation &amp; Health Monitor</h3>
-        <p class="proj-desc">Automated simulation testing pipeline for UAV pre-flight validation using Gazebo SITL. Real-time health monitoring system with telemetry parsing, system diagnostics, and anomaly detection prevents costly hardware failures.</p>
-        <div class="proj-tech">
-          <span>Gazebo SITL</span><span>Python</span><span>ROS2</span><span>MAVLink</span><span>Bash Scripting</span>
-        </div>
-        <div class="proj-footer">
-          <a href="https://github.com/Lithika07/DroneSim" target="_blank" class="proj-link">GitHub &#x2197;</a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-bar"></div>
-        <div class="proj-meta-row">
-          <span class="proj-badge">COMPLETE</span>
-          <span class="proj-org">AI Platform &mdash; GenAI Integration</span>
-        </div>
-        <h3 class="proj-title">Archon &mdash; Adaptive AI Learning Platform</h3>
-        <p class="proj-desc">AI-powered learning platform with Generative AI integration for personalized curriculum generation, adaptive concept mapping, and student progress analytics. Full-stack system with real-time instructor and learner dashboards.</p>
-        <div class="proj-tech">
-          <span>Python</span><span>GenAI APIs</span><span>React.js</span><span>Node.js</span><span>SQL</span><span>REST APIs</span>
-        </div>
-        <div class="proj-footer">
-          <a href="#" class="proj-link">Private Repo &#x2197;</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SKILLS (04) -->
-  <section id="stack" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">04</span><h2>Technical Stack</h2></div>
-    </div>
-    <div class="stack-grid">
-
-      <div class="stack-group">
-        <div class="sg-header">
-          <svg class="sg-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <rect x="7" y="7" width="6" height="6" rx="0.5"/>
-            <path d="M7 7 L3 3 M13 7 L17 3 M7 13 L3 17 M13 13 L17 17"/>
-            <circle cx="2.5" cy="2.5" r="1.8" fill="currentColor" stroke="none"/>
-            <circle cx="17.5" cy="2.5" r="1.8" fill="currentColor" stroke="none"/>
-            <circle cx="2.5" cy="17.5" r="1.8" fill="currentColor" stroke="none"/>
-            <circle cx="17.5" cy="17.5" r="1.8" fill="currentColor" stroke="none"/>
-          </svg>
-          UAV &amp; Autonomy
-        </div>
-        <div class="tag-cloud">
-          <span class="tag">Ardupilot</span>
-          <span class="tag">Pixhawk</span>
-          <span class="tag">MAVLink</span>
-          <span class="tag">ROS2</span>
-          <span class="tag">Gazebo SITL</span>
-          <span class="tag">PID Tuning</span>
-          <span class="tag">VINS-Fusion</span>
-          <span class="tag">SLAM</span>
-          <span class="tag">AprilTag</span>
-          <span class="tag">Mission Planner</span>
-        </div>
-      </div>
-
-      <div class="stack-group stack-group-featured">
-        <div class="sg-header sg-header-teal">
-          <svg class="sg-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <circle cx="10" cy="4.5" r="2.5"/>
-            <line x1="10" y1="7" x2="10" y2="13"/>
-            <line x1="10" y1="10" x2="6" y2="13"/>
-            <line x1="10" y1="10" x2="14" y2="13"/>
-            <line x1="10" y1="13" x2="7" y2="17.5"/>
-            <line x1="10" y1="13" x2="13" y2="17.5"/>
-            <circle cx="6" cy="13" r="1.8" fill="currentColor" stroke="none"/>
-            <circle cx="14" cy="13" r="1.8" fill="currentColor" stroke="none"/>
-            <circle cx="10" cy="13" r="1.5" fill="currentColor" stroke="none"/>
-          </svg>
-          Robotics &amp; Motion Capture
-          <span class="sg-badge">IIT-GN HCR Lab</span>
-        </div>
-        <div class="tag-cloud">
-          <span class="tag tag-teal">Vicon Systems</span>
-          <span class="tag tag-teal">OpenSim</span>
-          <span class="tag tag-teal">Custom Marker Design</span>
-          <span class="tag tag-teal">Musculoskeletal Modeling</span>
-          <span class="tag tag-teal">Kinematics Analysis</span>
-          <span class="tag tag-teal">Exoskeleton Sensing</span>
-          <span class="tag tag-teal">Robotics Fundamentals</span>
-        </div>
-      </div>
-
-      <div class="stack-group">
-        <div class="sg-header">
-          <svg class="sg-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <circle cx="4" cy="8" r="2.2"/>
-            <circle cx="10" cy="3.5" r="2.2"/>
-            <circle cx="16" cy="8" r="2.2"/>
-            <circle cx="10" cy="13.5" r="2.5" fill="currentColor" stroke="none"/>
-            <circle cx="10" cy="18.5" r="2" fill="currentColor" stroke="none"/>
-            <line x1="6" y1="8" x2="8" y2="4" stroke-width="0.8" opacity="0.7"/>
-            <line x1="14" y1="8" x2="12" y2="4" stroke-width="0.8" opacity="0.7"/>
-            <line x1="6" y1="8.5" x2="8" y2="12" stroke-width="0.8" opacity="0.7"/>
-            <line x1="14" y1="8.5" x2="12" y2="12" stroke-width="0.8" opacity="0.7"/>
-          </svg>
-          Artificial Intelligence &amp; ML
-        </div>
-        <div class="tag-cloud">
-          <span class="tag">Python</span>
-          <span class="tag">PyTorch</span>
-          <span class="tag">TensorFlow</span>
-          <span class="tag">YOLOv8</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">DeepSORT</span>
-          <span class="tag">Scikit-learn</span>
-          <span class="tag">GenAI APIs</span>
-          <span class="tag">NumPy / Pandas</span>
-        </div>
-      </div>
-
-      <div class="stack-group">
-        <div class="sg-header">
-          <svg class="sg-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-            <rect x="2" y="3" width="16" height="11" rx="1.5"/>
-            <line x1="7" y1="17" x2="13" y2="17"/>
-            <line x1="10" y1="14" x2="10" y2="17"/>
-            <polyline points="5,9.5 7.5,7 10.5,11 13,8.5" stroke-width="1.2"/>
-          </svg>
-          Software Development
-        </div>
-        <div class="tag-cloud">
-          <span class="tag">C / C++</span>
-          <span class="tag">React.js</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Git / Linux</span>
-          <span class="tag">Flask</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PUBLICATIONS (05) -->
-  <section id="publications" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">05</span><h2>Publications</h2></div>
-    </div>
-    <div class="pub-list">
-
-      <div class="pub-card">
-        <div class="pub-venue-row">
-          <span class="pub-venue">IEEE ICBDML-2026</span>
-          <span class="pub-status-chip">Published</span>
-        </div>
-        <h3 class="pub-title">Topological Indicators &amp; Neural Vision for Autonomous UAV Navigation</h3>
-        <p class="pub-detail">Demonstrated 88% navigation accuracy on the EuRoC MAV benchmark dataset. Proposed topological preprocessing to significantly reduce SLAM computational overhead while maintaining spatial coherence for real-time UAV path planning in unstructured environments.</p>
-        <div class="pub-footer">
-          <div class="pub-tags">
-            <span>EuRoC MAV Dataset</span><span>SLAM</span><span>Topological Navigation</span><span>Neural Vision</span><span>UAV</span>
-          </div>
-          <a href="https://github.com/Lithika07/TopoNeuro" target="_blank" class="pub-link">Repository &#x2197;</a>
-        </div>
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-venue-row">
-          <span class="pub-venue">IEEE ICBDML-2026</span>
-          <span class="pub-status-chip">Published</span>
-        </div>
-        <h3 class="pub-title">Machine Learning Methods for Hourly Weather Forecasting in Urban Environments</h3>
-        <p class="pub-detail">Developed regression and ensemble learning models on historical Delhi meteorological datasets. Produced accurate short-term and long-term weather predictions with hourly temporal resolution, demonstrating effective ML approaches for urban micro-climate analysis.</p>
-        <div class="pub-footer">
-          <div class="pub-tags">
-            <span>Regression Models</span><span>Ensemble Learning</span><span>Meteorological Data</span><span>Time Series Forecasting</span>
-          </div>
-          <a href="#" class="pub-link">Repository &#x2197;</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS (06) -->
-  <section id="achievements" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">06</span><h2>Recognition &amp; Awards</h2></div>
-    </div>
-
-    <div class="ach-highlight-grid">
-      <div class="ach-card ach-card-featured">
-        <div class="ach-icon-wrap">
-          <span class="ach-icon">&#8377;</span>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">&#8377;4 Lakh &mdash; Government of India Research Grant</h3>
-          <p class="ach-org">Genesis Program &middot; Ministry of Electronics &amp; IT (MeitY)</p>
-          <p class="ach-desc">Full research grant awarded to Drone MatrX initiative for multi-UAV swarm development, hardware procurement, and AI-driven autonomous navigation research.</p>
-        </div>
-      </div>
-      <div class="ach-card">
-        <div class="ach-icon-wrap">
-          <span class="ach-icon">&#9733;</span>
-        </div>
-        <div class="ach-body">
-          <h3 class="ach-title">5+ Code-a-Thon &amp; Hackathon Victories</h3>
-          <p class="ach-org">Inter-college &amp; External Competitions</p>
-          <p class="ach-desc">Consistent top placements across coding competitions, hackathons, and technical challenges spanning AI/ML, software development, and autonomous systems domains.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="acad-grid">
-      <div class="acad-item">
-        <span class="acad-grade">9.0 CGPA</span>
-        <span class="acad-program">B.Tech AI &amp; ML</span>
-        <span class="acad-inst">Karnavati University &mdash; 2027</span>
-      </div>
-      <div class="acad-item">
-        <span class="acad-grade">98.2%</span>
-        <span class="acad-program">Class X &mdash; CBSE</span>
-        <span class="acad-inst">Delhi Public School, Gandhinagar</span>
-      </div>
-      <div class="acad-item">
-        <span class="acad-grade">92.2%</span>
-        <span class="acad-program">Class XII &mdash; CBSE</span>
-        <span class="acad-inst">Delhi Public School, Gandhinagar</span>
       </div>
     </div>
   </section>
 
-  <!-- LEADERSHIP (07) -->
-  <section id="leadership" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">07</span><h2>Community Leadership</h2></div>
-    </div>
-    <div class="lead-grid">
-
-      <div class="lead-card lead-active">
-        <div class="lead-card-top">
-          <div class="lead-icon-wrap uav-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <rect x="9" y="9" width="6" height="6" rx="0.5"/>
-              <path d="M9 9 L5 5 M15 9 L19 5 M9 15 L5 19 M15 15 L19 19"/>
-              <circle cx="4" cy="4" r="2" fill="currentColor" stroke="none"/>
-              <circle cx="20" cy="4" r="2" fill="currentColor" stroke="none"/>
-              <circle cx="4" cy="20" r="2" fill="currentColor" stroke="none"/>
-              <circle cx="20" cy="20" r="2" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <div class="lead-org-info">
-            <h3>Drone MatrX</h3>
-            <p class="lead-role">Technical Lead &middot; MeitY GOI Funded Research Project</p>
-          </div>
-          <span class="lead-badge">&#x25CF; Active</span>
-        </div>
-        <ul class="lead-points">
-          <li>Leads multi-UAV swarm coordination system managing 3+ synchronized drones with centralized mission planning and distributed autonomous execution across diverse environments.</li>
-          <li>Reduced AI perception latency by 40% through optimized edge inference pipelines deployed directly on onboard compute modules, enabling real-time decision making.</li>
-          <li>Secured &#8377;4 Lakh Government of India (MeitY Genesis) funding for hardware procurement, research infrastructure, and team development.</li>
-        </ul>
-      </div>
-
-      <div class="lead-card lead-active">
-        <div class="lead-card-top">
-          <div class="lead-icon-wrap comm-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <circle cx="12" cy="5.5" r="3"/>
-              <circle cx="5" cy="17" r="3"/>
-              <circle cx="19" cy="17" r="3"/>
-              <path d="M9.5 8 L6.5 14 M14.5 8 L17.5 14 M8 17 L16 17"/>
-            </svg>
-          </div>
-          <div class="lead-org-info">
-            <h3>FlightX UAV Community</h3>
-            <p class="lead-role">Founder &amp; Lead &middot; 100+ Active Members</p>
-          </div>
-          <span class="lead-badge">&#x25CF; Active</span>
-        </div>
-        <ul class="lead-points">
-          <li>Founded and scaled the FlightX UAV community from zero to 100+ active members passionate about drone technology, autonomous systems, and aerial robotics.</li>
-          <li>Organizes hands-on technical workshops covering ROS2, autonomous navigation algorithms, Ardupilot configuration, and Gazebo simulation environments.</li>
-          <li>Mentors junior members on everything from hardware assembly to flight controller tuning, building a collaborative learning ecosystem at Karnavati University.</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT (08) -->
-  <section id="contact" class="reveal">
-    <div class="sec-label">
-      <div class="sec-label-inner"><span class="sec-num">08</span><h2>Get in Touch</h2></div>
-    </div>
-    <div class="contact-layout">
-
-      <div class="contact-info-col">
-        <p class="contact-intro">Open to research collaborations, internship opportunities, and exciting projects in UAV autonomy, robotics, and machine intelligence. Always excited to connect with fellow researchers and engineers.</p>
-        <div class="contact-links">
-          <a href="mailto:sarvanan2907@gmail.com" class="contact-chip">
-            <span class="cc-icon">&#x2709;</span>
-            <span class="cc-text">sarvanan2907@gmail.com</span>
+  <section id="contact" style="scroll-margin-top:80px;max-width:1180px;margin:0 auto;padding:clamp(70px,10vh,120px) clamp(20px,5vw,56px) clamp(40px,6vh,70px);">
+    <div style="position:relative;overflow:hidden;border:1px solid rgba(0,229,204,0.18);border-radius:18px;background:rgba(16,17,26,0.55);padding:clamp(34px,5vw,64px);">
+      <canvas ref="{{ contactCanvas }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0.42;pointer-events:none;"></canvas>
+      <div style="position:relative;z-index:2;">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;color:#00e5cc;margin-bottom:18px;">05 — Contact</div>
+        <h2 style="font-size:clamp(28px,4.4vw,52px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin:0 0 30px;color:#f3f6f9;max-width:640px;">Let's open a channel.</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;">
+          <a href="mailto:sarvanan2907@gmail.com" style="display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(233,237,242,0.16);border-radius:999px;padding:11px 20px;font-size:14px;color:rgba(233,237,242,0.82);transition:border-color .2s,color .2s;" style-hover="border-color:#00e5cc;color:#00e5cc;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#00e5cc;flex:none;"></span>sarvanan2907@gmail.com
           </a>
-          <a href="https://github.com/Lithika07" target="_blank" class="contact-chip">
-            <span class="cc-icon">&#9654;</span>
-            <span class="cc-text">github.com/Lithika07</span>
+          <a href="https://github.com/Lithika07" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(233,237,242,0.16);border-radius:999px;padding:11px 20px;font-size:14px;color:rgba(233,237,242,0.82);transition:border-color .2s,color .2s;" style-hover="border-color:#00e5cc;color:#00e5cc;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#00e5cc;flex:none;"></span>github.com/Lithika07
           </a>
-          <a href="https://www.linkedin.com/in/lithika-saravanakumar-a19b8b23b/" target="_blank" class="contact-chip">
-            <span class="cc-icon">&#x25C8;</span>
-            <span class="cc-text">LinkedIn &mdash; Lithika Saravanakumar</span>
+          <a href="https://www.linkedin.com/in/lithika-s-a8bb23294" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(233,237,242,0.16);border-radius:999px;padding:11px 20px;font-size:14px;color:rgba(233,237,242,0.82);transition:border-color .2s,color .2s;" style-hover="border-color:#00e5cc;color:#00e5cc;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex:none;"></span>linkedin
           </a>
-          <div class="contact-chip no-link">
-            <span class="cc-icon">&#x25CF;</span>
-            <span class="cc-text">Ahmedabad, Gujarat, India</span>
-          </div>
         </div>
       </div>
-
-      <form class="contact-form" id="contact-form" action="https://formsubmit.co/sarvanan2907@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <div class="form-field">
-          <label class="form-label">Your Name</label>
-          <input type="text" name="name" class="form-input" placeholder="Enter your name" required>
-        </div>
-        <div class="form-field">
-          <label class="form-label">Email Address</label>
-          <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
-        </div>
-        <div class="form-field">
-          <label class="form-label">Message</label>
-          <textarea name="message" class="form-input form-textarea" placeholder="Tell me about your project or opportunity..." rows="5" required></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Message &#8594;</button>
-        <p class="form-status" id="form-status"></p>
-      </form>
-
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:28px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.04em;color:rgba(233,237,242,0.4);">
+      <span>© 2026 Lithika Saravanakumar</span>
+      <span>Built From Inside the Swarm</span>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <svg width="20" height="20" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.2">
-          <circle cx="14" cy="14" r="4"/>
-          <circle cx="14" cy="14" r="2" fill="currentColor"/>
-          <line x1="14" y1="10" x2="14" y2="3"/>
-          <line x1="18" y1="12" x2="23.5" y2="6.5"/>
-          <line x1="18" y1="16" x2="23.5" y2="21.5"/>
-          <line x1="14" y1="18" x2="14" y2="25"/>
-          <line x1="10" y1="16" x2="4.5" y2="21.5"/>
-          <line x1="10" y1="12" x2="4.5" y2="6.5"/>
-        </svg>
-        <span>Lithika Saravanakumar</span>
-      </div>
-      <p class="footer-copy">&copy; 2026 &middot; Designed &amp; Built by Lithika Saravanakumar</p>
-      <p class="footer-tech">HTML &middot; CSS &middot; JavaScript &mdash; Hosted on GitHub Pages</p>
-    </div>
-  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:860},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#00e5cc&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;accent2&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#a855f7&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;calm&quot;,&quot;balanced&quot;,&quot;dense&quot;],&quot;default&quot;:&quot;balanced&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;meshLinks&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  heroCanvas = React.createRef();
+  portraitCanvas = React.createRef();
+  projectsCanvas = React.createRef();
+  projectsContainer = React.createRef();
+  researchCanvas = React.createRef();
+  contactCanvas = React.createRef();
+  navRef = React.createRef();
 
-  <script src="./main.js"></script>
+  state = { expanded: null };
+  TEAL = '0,229,204';
+  VIOLET = '168,85,247';
+  dmul = 1;
+  meshLinks = true;
+
+  PROJECTS = [
+    { title: 'DroneSim', desc: 'Bash automation framework for UAV simulation on Gazebo + ROS2 — auto launch, health monitoring & diagnostics. Cut debugging time ~30%.', stack: ['Bash','ROS2','Gazebo'], link: 'https://github.com/Lithika07/DroneSim', linkLabel: 'GitHub ↗' },
+    { title: 'UAV Docking', desc: 'AprilTag visual localization + MAVLink offboard control for cm-level precision landing & autonomous docking in GPS-denied flight. (ISRO IRoC 2026)', stack: ['AprilTag','MAVLink','ROS2'], link: '#', linkLabel: 'ISRO IRoC 2026' },
+    { title: 'VINS-Fusion', desc: 'Visual-inertial SLAM fused with onboard UAV systems for real-time pose estimation & trajectory tracking from synced camera + IMU.', stack: ['VINS-Fusion','SLAM','IMU'], link: 'https://github.com/Lithika07/VinsFusionNonGPS', linkLabel: 'GitHub ↗' },
+    { title: 'Ardupilot Drone', desc: 'Pixhawk flight stack — ESC calibration, PID tuning, altitude hold, sensor fusion. Testing custom ESP32 + MPU6050 controllers for indoor non-GPS flight.', stack: ['Pixhawk','Ardupilot','ESP32'], link: '#', linkLabel: 'Hardware Build' },
+    { title: 'Archon', desc: 'AI learning platform that auto-generates structured notes & quizzes from study material, powered by the Claude API.', stack: ['React','Node','MongoDB'], link: 'https://github.com/Lithika07/ARCHON', linkLabel: 'GitHub ↗' },
+    { title: 'Drone MatrX', desc: 'Multi-UAV swarm coordination platform — distributed telemetry & synchronized decision-making across 3+ drones. ₹4L MeitY Genesis funded.', stack: ['Swarm','Telemetry','Edge'], link: '#', linkLabel: 'MeitY Genesis ↗' }
+  ];
+
+  // which projects are genuinely related — only these get a mesh link.
+  // 0 DroneSim · 1 UAV Docking · 2 VINS-Fusion · 3 Ardupilot Drone · 4 Archon · 5 Drone MatrX
+  // (Archon is a standalone full-stack/AI app — intentionally unconnected.)
+  PROJECT_EDGES = [[0, 1], [0, 3], [0, 5], [1, 2], [1, 3], [2, 3], [1, 5], [3, 5]];
+
+  hex2rgb(h) {
+    if (!h) return '0,229,204';
+    h = ('' + h).replace('#', '');
+    if (h.length === 3) h = h.split('').map(c => c + c).join('');
+    const n = parseInt(h, 16);
+    if (isNaN(n)) return '0,229,204';
+    return ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255);
+  }
+
+  componentDidMount() {
+    this.TEAL = this.hex2rgb(this.props.accent || '#00e5cc');
+    this.VIOLET = this.hex2rgb(this.props.accent2 || '#a855f7');
+    this.dmul = ({ calm: 0.6, balanced: 1, dense: 1.5 })[this.props.density || 'balanced'] || 1;
+    this.meshLinks = this.props.meshLinks !== false;
+
+    this.mouse = { x: -9999, y: -9999 };
+    this.sys = {
+      hero: { canvas: this.heroCanvas.current, enabled: true },
+      portrait: { canvas: this.portraitCanvas.current, enabled: true },
+      projects: { canvas: this.projectsCanvas.current, enabled: true },
+      research: { canvas: this.researchCanvas.current, enabled: true },
+      contact: { canvas: this.contactCanvas.current, enabled: false }
+    };
+
+    const c = this.heroCanvas.current;
+    if (c) {
+      this._heroMove = (e) => { const r = c.getBoundingClientRect(); this.mouse.x = e.clientX - r.left; this.mouse.y = e.clientY - r.top; };
+      this._heroLeave = () => { this.mouse.x = -9999; this.mouse.y = -9999; };
+      c.addEventListener('mousemove', this._heroMove);
+      c.addEventListener('mouseleave', this._heroLeave);
+    }
+
+    this.resize();
+    this._onResize = () => this.resize();
+    this._onScroll = () => this.onScroll();
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this.onScroll();
+    this.observeSections();
+
+    this.running = true;
+    this.last = performance.now();
+    const loop = (t) => {
+      if (!this.running) return;
+      const dt = Math.min(34, t - this.last); this.last = t;
+      this.tick(dt);
+      this._raf = requestAnimationFrame(loop);
+    };
+    this._raf = requestAnimationFrame(loop);
+  }
+
+  componentDidUpdate(prev) {
+    let dirty = false;
+    if (prev.accent !== this.props.accent) { this.TEAL = this.hex2rgb(this.props.accent || '#00e5cc'); }
+    if (prev.accent2 !== this.props.accent2) { this.VIOLET = this.hex2rgb(this.props.accent2 || '#a855f7'); }
+    if (prev.density !== this.props.density) { this.dmul = ({ calm: 0.6, balanced: 1, dense: 1.5 })[this.props.density || 'balanced'] || 1; dirty = true; }
+    this.meshLinks = this.props.meshLinks !== false;
+    if (dirty && this.sys) this.resize();
+  }
+
+  componentWillUnmount() {
+    this.running = false;
+    cancelAnimationFrame(this._raf);
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+    const c = this.heroCanvas.current;
+    if (c) { c.removeEventListener('mousemove', this._heroMove); c.removeEventListener('mouseleave', this._heroLeave); }
+  }
+
+  sizeCanvas(canvas) {
+    const r = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.max(1, Math.round(r.width * dpr));
+    canvas.height = Math.max(1, Math.round(r.height * dpr));
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { w: r.width, h: r.height, ctx };
+  }
+
+  resize() {
+    const setup = (key, build) => {
+      const s = this.sys[key];
+      if (!s || !s.canvas) return;
+      const m = this.sizeCanvas(s.canvas);
+      s.w = m.w; s.h = m.h; s.ctx = m.ctx;
+      build.call(this, s);
+    };
+    setup('hero', this.buildHero);
+    setup('portrait', this.buildPortrait);
+    setup('projects', this.buildProjects);
+    setup('research', this.buildResearch);
+    setup('contact', this.buildContact);
+  }
+
+  onScroll() {
+    const nav = this.navRef.current;
+    if (!nav) return;
+    const y = window.scrollY || window.pageYOffset || 0;
+    if (y > 36) {
+      nav.style.background = 'rgba(10,10,15,0.62)';
+      nav.style.backdropFilter = 'blur(16px)';
+      nav.style.webkitBackdropFilter = 'blur(16px)';
+      nav.style.borderBottomColor = 'rgba(0,229,204,0.10)';
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.webkitBackdropFilter = 'none';
+      nav.style.borderBottomColor = 'transparent';
+    }
+  }
+
+  observeSections() {
+    const map = [['#hero', 'hero'], ['#about', 'portrait'], ['#projects', 'projects'], ['#research', 'research'], ['#contact', 'contact']];
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        const key = en.target.getAttribute('data-sys');
+        if (this.sys[key]) this.sys[key].enabled = en.isIntersecting;
+      });
+    }, { threshold: 0.02 });
+    map.forEach(([sel, key]) => {
+      const el = document.querySelector(sel);
+      if (el) { el.setAttribute('data-sys', key); this._io.observe(el); }
+    });
+  }
+
+  // ---------- HERO (boids) ----------
+  buildHero(s) {
+    const base = s.w < 768 ? 12 : (s.w < 1200 ? 26 : 38);
+    const count = Math.max(8, Math.round(base * this.dmul));
+    s.parts = [];
+    for (let i = 0; i < count; i++) {
+      s.parts.push({
+        x: Math.random() * s.w, y: Math.random() * s.h,
+        vx: (Math.random() - 0.5), vy: (Math.random() - 0.5),
+        z: Math.random(), violet: Math.random() < 0.22,
+        ang: Math.random() * 6.2832, phase: Math.random() * 6.2832,
+        wander: Math.random() * 6.2832
+      });
+    }
+    // keep-out zone around the top-left drone logo so swarm never overlaps it
+    const logoEl = document.getElementById('swarm-logo');
+    if (logoEl && s.canvas) {
+      const lr = logoEl.getBoundingClientRect(), cr = s.canvas.getBoundingClientRect();
+      s.logo = { x: lr.left + lr.width / 2 - cr.left, y: lr.top + lr.height / 2 - cr.top, r: 56 };
+    } else { s.logo = null; }
+  }
+  updateHero(s, dt) {
+    const f = dt / 16, w = s.w, h = s.h, P = s.parts;
+    // no cohesion / no alignment: each drone cruises on its own and keeps clear of the rest.
+    const sep = 86, sepW = 0.42, R = 145;
+    for (let i = 0; i < P.length; i++) {
+      const a = P[i];
+      let sx = 0, sy = 0, ax = 0, ay = 0, collide = 0;
+      for (let j = 0; j < P.length; j++) {
+        if (i === j) continue;
+        const b = P[j], dx = b.x - a.x, dy = b.y - a.y, d2 = dx * dx + dy * dy;
+        if (d2 < sep * sep) {
+          // mutual collision-avoidance: the closer two drones get, the harder they veer apart
+          const d = Math.sqrt(d2) || 1, push = (1 - d / sep);
+          sx -= (dx / d) * push * push; sy -= (dy / d) * push * push;
+          if (push > collide) collide = push;
+        }
+      }
+      a.collide = collide;
+      ax += sx * sepW; ay += sy * sepW;
+      // steer firmly out of the logo keep-out zone
+      if (s.logo) {
+        const o = s.logo, odx = a.x - o.x, ody = a.y - o.y, od = Math.hypot(odx, ody) || 1;
+        if (od < o.r) { const push = (1 - od / o.r); const fA = push * push * 2.4 * (0.6 + a.z); ax += (odx / od) * fA; ay += (ody / od) * fA; }
+      }
+      // gentle wander so each one keeps drifting on an independent course
+      a.wander += (Math.random() - 0.5) * 0.5;
+      ax += Math.cos(a.wander) * 0.018; ay += Math.sin(a.wander) * 0.018;
+      const mdx = a.x - this.mouse.x, mdy = a.y - this.mouse.y, md2 = mdx * mdx + mdy * mdy;
+      if (md2 < R * R) { const md = Math.sqrt(md2) || 1; const force = (1 - md / R) * 0.9 * (0.5 + a.z); ax += (mdx / md) * force; ay += (mdy / md) * force; }
+      a.vx += ax * f; a.vy += ay * f;
+      const maxs = 0.55 + a.z * 1.05, sp = Math.hypot(a.vx, a.vy);
+      if (sp > maxs) { a.vx = a.vx / sp * maxs; a.vy = a.vy / sp * maxs; }
+      else if (sp < 0.22) { a.vx += (Math.random() - 0.5) * 0.14; a.vy += (Math.random() - 0.5) * 0.14; }
+      a.x += a.vx * f; a.y += a.vy * f;
+      // hard clamp: never let a drone enter the logo disc
+      if (s.logo) {
+        const o = s.logo, odx = a.x - o.x, ody = a.y - o.y, od = Math.hypot(odx, ody);
+        if (od < o.r && od > 0.01) { a.x = o.x + (odx / od) * o.r; a.y = o.y + (ody / od) * o.r; }
+      }
+      // heading follows velocity; rotor spin phase advances with speed
+      if (sp > 0.05) { const ta = Math.atan2(a.vy, a.vx); let d = ta - a.ang; while (d > Math.PI) d -= 6.2832; while (d < -Math.PI) d += 6.2832; a.ang += d * 0.2; }
+      a.phase += (0.5 + sp) * f * 0.6;
+      const m = 24;
+      if (a.x < -m) a.x = w + m; else if (a.x > w + m) a.x = -m;
+      if (a.y < -m) a.y = h + m; else if (a.y > h + m) a.y = -m;
+    }
+  }
+  drawDrone(ctx, a, col) {
+    // size scales with depth; alpha brighter in foreground
+    const z = a.z, scale = 0.62 + z * 1.18, baseA = 0.34 + z * 0.6;
+    const arm = 5.2 * scale, rotor = 2.3 * scale;
+    ctx.save();
+    ctx.translate(a.x, a.y);
+    ctx.rotate(a.ang + 0.7854); // X-frame: rotate 45° off heading
+    // soft halo
+    ctx.fillStyle = 'rgba(' + col + ',' + (baseA * 0.16) + ')';
+    ctx.beginPath(); ctx.arc(0, 0, arm * 1.7, 0, 6.2832); ctx.fill();
+    // arms
+    ctx.strokeStyle = 'rgba(' + col + ',' + (baseA * 0.85) + ')';
+    ctx.lineWidth = Math.max(0.7, 1.0 * scale);
+    ctx.beginPath();
+    ctx.moveTo(-arm, -arm); ctx.lineTo(arm, arm);
+    ctx.moveTo(-arm, arm); ctx.lineTo(arm, -arm);
+    ctx.stroke();
+    // rotors (4 tips) — spinning disc shown as an arc that sweeps
+    const tips = [[-arm, -arm], [arm, -arm], [arm, arm], [-arm, arm]];
+    for (let k = 0; k < 4; k++) {
+      const tx = tips[k][0], ty = tips[k][1];
+      ctx.strokeStyle = 'rgba(' + col + ',' + (baseA * 0.5) + ')';
+      ctx.lineWidth = Math.max(0.6, 0.9 * scale);
+      ctx.beginPath(); ctx.arc(tx, ty, rotor, 0, 6.2832); ctx.stroke();
+      const sw = a.phase + k * 1.5708;
+      ctx.strokeStyle = 'rgba(' + col + ',' + baseA + ')';
+      ctx.beginPath(); ctx.arc(tx, ty, rotor, sw, sw + 1.9); ctx.stroke();
+    }
+    // body core — flashes warm-violet at the instant it's dodging another drone
+    const near = a.collide || 0;
+    const core = near > 0.12 ? this.VIOLET : col;
+    const coreA = Math.min(1, baseA + near * 0.45);
+    ctx.fillStyle = 'rgba(' + core + ',' + coreA + ')';
+    ctx.beginPath(); ctx.arc(0, 0, 1.5 * scale, 0, 6.2832); ctx.fill();
+    ctx.restore();
+  }
+
+  drawHero(s) {
+    const ctx = s.ctx, w = s.w, h = s.h, P = s.parts;
+    ctx.clearRect(0, 0, w, h);
+    if (this.meshLinks) {
+      ctx.lineWidth = 1;
+      for (let i = 0; i < P.length; i++) {
+        const a = P[i];
+        for (let j = i + 1; j < P.length; j++) {
+          const b = P[j], dx = b.x - a.x, dy = b.y - a.y, d2 = dx * dx + dy * dy;
+          if (d2 < 96 * 96) {
+            const al = (1 - Math.sqrt(d2) / 96) * 0.11 * Math.min(a.z, b.z);
+            if (al > 0.012) { ctx.strokeStyle = 'rgba(' + this.TEAL + ',' + al + ')'; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+          }
+        }
+      }
+    }
+    for (const a of P) {
+      const col = a.violet ? this.VIOLET : this.TEAL;
+      if (a.z < 0.28) {
+        // far background: simple dim point (depth-of-field)
+        const r = 1.0 + a.z * 1.6, al = 0.18 + a.z * 0.4;
+        ctx.fillStyle = 'rgba(' + col + ',' + al + ')';
+        ctx.beginPath(); ctx.arc(a.x, a.y, r, 0, 6.2832); ctx.fill();
+      } else {
+        this.drawDrone(ctx, a, col);
+      }
+    }
+  }
+
+  // ---------- FORMATION (live multi-UAV swarm holding & morphing formations) ----------
+  formationPatterns(n) {
+    const TAU = 6.2832, rng = [];
+    for (let i = 0; i < n; i++) rng.push(i);
+    const half = (n - 1) / 2;
+    return [
+      // circle
+      rng.map(i => { const a = i / n * TAU - Math.PI / 2; return [Math.cos(a) * 0.74, Math.sin(a) * 0.74]; }),
+      // V / echelon
+      rng.map(i => { const k = i - half; return [k * 0.27, -Math.abs(k) * 0.34 + 0.32]; }),
+      // diagonal column
+      rng.map(i => { const k = i - half; return [k * 0.2, k * 0.28]; }),
+      // two-row grid
+      rng.map(i => { const cols = Math.ceil(n / 2), col = i % cols, row = Math.floor(i / cols); return [(col - (cols - 1) / 2) * 0.46, (row - 0.5) * 0.62]; })
+    ];
+  }
+  buildPortrait(s) {
+    const w = s.w, h = s.h, n = w < 768 ? 5 : 6;
+    s.scale = Math.min(w, h) * 0.34;
+    s.cx = w * 0.5; s.cy = h * 0.5;
+    s.patterns = this.formationPatterns(n);
+    s.pIndex = 0; s.morph = 0; s._t = 0;
+    s.dr = [];
+    for (let i = 0; i < n; i++) {
+      s.dr.push({
+        x: w * 0.5 + (Math.random() - 0.5) * w * 0.4, y: h * 0.5 + (Math.random() - 0.5) * h * 0.4,
+        vx: 0, vy: 0, z: 0.78 + Math.random() * 0.22, ang: 0, phase: Math.random() * 6.2832,
+        collide: 0, leader: i === 0
+      });
+    }
+  }
+  updatePortrait(s, dt) {
+    const f = dt / 16;
+    s._t += dt * 0.001;
+    s.morph += dt * 0.001;
+    if (s.morph > 4) { s.morph = 0; s.pIndex = (s.pIndex + 1) % s.patterns.length; }
+    // whole formation slowly drifts and rotates
+    const cx = s.cx + Math.cos(s._t * 0.5) * s.w * 0.06;
+    const cy = s.cy + Math.sin(s._t * 0.62) * s.h * 0.05;
+    const rot = s._t * 0.32;
+    const pat = s.patterns[s.pIndex], ca = Math.cos(rot), sa = Math.sin(rot);
+    s.dr.forEach((d, i) => {
+      const p = pat[i % pat.length];
+      const tx = cx + (p[0] * ca - p[1] * sa) * s.scale;
+      const ty = cy + (p[0] * sa + p[1] * ca) * s.scale;
+      const ax = (tx - d.x) * 0.045, ay = (ty - d.y) * 0.045;
+      d.vx = (d.vx + ax) * 0.9; d.vy = (d.vy + ay) * 0.9;
+      d.x += d.vx * f; d.y += d.vy * f;
+      const sp = Math.hypot(d.vx, d.vy);
+      if (sp > 0.08) { const ta = Math.atan2(d.vy, d.vx); let dd = ta - d.ang; while (dd > Math.PI) dd -= 6.2832; while (dd < -Math.PI) dd += 6.2832; d.ang += dd * 0.18; }
+      d.phase += (0.6 + sp) * f * 0.5;
+    });
+  }
+  drawPortrait(s) {
+    const ctx = s.ctx, w = s.w, h = s.h, D = s.dr, t = s._t || 0;
+    ctx.clearRect(0, 0, w, h);
+    ctx.lineWidth = 1;
+    // comm links + travelling telemetry packets between drones in the formation
+    for (let i = 0; i < D.length; i++) {
+      for (let j = i + 1; j < D.length; j++) {
+        const ax = D[i].x, ay = D[i].y, bx = D[j].x, by = D[j].y;
+        const dx = bx - ax, dy = by - ay, d = Math.hypot(dx, dy), th = Math.min(w, h) * 0.62;
+        if (d >= th) continue;
+        const link = (1 - d / th);
+        ctx.strokeStyle = 'rgba(' + this.TEAL + ',' + (link * 0.3) + ')';
+        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+        const seed = i * 5 + j * 11, prog = (t * 0.4 + seed * 0.17) % 1;
+        const env = Math.sin(prog * Math.PI), pa = env * link * 0.85;
+        if (pa > 0.05) {
+          ctx.fillStyle = 'rgba(' + this.TEAL + ',' + pa + ')';
+          ctx.beginPath(); ctx.arc(ax + dx * prog, ay + dy * prog, 1.5, 0, 6.2832); ctx.fill();
+        }
+      }
+    }
+    for (const d of D) this.drawDrone(ctx, d, d.leader ? this.VIOLET : this.TEAL);
+  }
+
+  // ---------- PROJECTS (network graph) ----------
+  buildProjects(s) {
+    const w = s.w, h = s.h, n = this.PROJECTS.length;
+    s.nodes = [];
+    for (let i = 0; i < n; i++) {
+      const ang = (i / n) * 6.2832 - 0.6;
+      s.nodes.push({
+        x: w * 0.5 + Math.cos(ang) * w * 0.26 + (Math.random() - 0.5) * 36,
+        y: h * 0.5 + Math.sin(ang) * h * 0.30 + (Math.random() - 0.5) * 36,
+        vx: (Math.random() - 0.5) * 0.34, vy: (Math.random() - 0.5) * 0.30
+      });
+    }
+    const cont = this.projectsContainer.current;
+    s.els = cont ? cont.querySelectorAll('[data-node]') : [];
+    s.padX = Math.min(150, Math.max(80, w * 0.16));
+    s.padY = Math.min(110, Math.max(70, h * 0.16));
+  }
+  updateProjects(s, dt) {
+    const f = dt / 16, w = s.w, h = s.h, px = s.padX, py = s.padY;
+    s._t = (s._t || 0) + dt * 0.001;
+    s.nodes.forEach((n, i) => {
+      if (this.state.expanded === i) return;
+      n.vx += (Math.random() - 0.5) * 0.04; n.vy += (Math.random() - 0.5) * 0.04;
+      n.vx = Math.max(-0.55, Math.min(0.55, n.vx)); n.vy = Math.max(-0.5, Math.min(0.5, n.vy));
+      n.x += n.vx * f; n.y += n.vy * f;
+      if (n.x < px) { n.x = px; n.vx *= -1; } else if (n.x > w - px) { n.x = w - px; n.vx *= -1; }
+      if (n.y < py) { n.y = py; n.vy *= -1; } else if (n.y > h - py) { n.y = h - py; n.vy *= -1; }
+    });
+    if (s.els) s.els.forEach((el, i) => { const n = s.nodes[i]; if (n) el.style.transform = 'translate(' + n.x + 'px,' + n.y + 'px) translate(-50%,-50%)'; });
+  }
+  drawProjects(s) {
+    const ctx = s.ctx, w = s.w, h = s.h, N = s.nodes, t = s._t || 0;
+    ctx.clearRect(0, 0, w, h);
+    ctx.lineWidth = 1;
+    const E = this.PROJECT_EDGES, maxD = Math.max(w, h);
+    for (let e = 0; e < E.length; e++) {
+      const i = E[e][0], j = E[e][1];
+      if (!N[i] || !N[j]) continue;
+      {
+        const ax = N[i].x, ay = N[i].y, bx = N[j].x, by = N[j].y;
+        const dx = bx - ax, dy = by - ay, d = Math.hypot(dx, dy) || 1;
+        const link = Math.max(0.45, 1 - d / maxD);
+        // the mesh link itself
+        ctx.strokeStyle = 'rgba(' + this.TEAL + ',' + (link * 0.42) + ')';
+        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+        // message packets travelling between the two drones (the link "talking")
+        const seed = (i * 7 + j * 13);
+        const speed = 0.34 + ((seed % 5) * 0.05);
+        for (let k = 0; k < 2; k++) {
+          const dir = k === 0 ? 1 : -1;
+          let prog = (t * speed + seed * 0.21 + k * 0.5) % 1;
+          if (dir < 0) prog = 1 - prog;
+          const x = ax + dx * prog, py2 = ay + dy * prog;
+          // packet brightness fades in/out along the trip
+          const env = Math.sin(prog * Math.PI);
+          const pa = env * link * 0.95;
+          if (pa < 0.04) continue;
+          ctx.fillStyle = 'rgba(' + this.TEAL + ',' + pa + ')';
+          ctx.beginPath(); ctx.arc(x, py2, 1.9, 0, 6.2832); ctx.fill();
+          // faint trailing tail
+          const tx = x - (dx / d) * 7 * dir, ty = py2 - (dy / d) * 7 * dir;
+          ctx.strokeStyle = 'rgba(' + this.TEAL + ',' + (pa * 0.45) + ')';
+          ctx.lineWidth = 1.4;
+          ctx.beginPath(); ctx.moveTo(x, py2); ctx.lineTo(tx, ty); ctx.stroke();
+          ctx.lineWidth = 1;
+        }
+      }
+    }
+  }
+
+  // ---------- RESEARCH (faint trails) ----------
+  buildResearch(s) {
+    const n = s.w < 768 ? 16 : 34;
+    s.parts = [];
+    for (let i = 0; i < n; i++) s.parts.push({ x: Math.random() * s.w, y: Math.random() * s.h, vx: 0.12 + Math.random() * 0.32, vy: (Math.random() - 0.5) * 0.18 });
+    s.primed = false;
+  }
+  updateResearch(s, dt) {
+    const f = dt / 16;
+    for (const p of s.parts) {
+      p.x += p.vx * f; p.y += p.vy * f;
+      if (p.x > s.w + 6) p.x = -6; if (p.x < -6) p.x = s.w + 6;
+      if (p.y > s.h + 6) p.y = -6; if (p.y < -6) p.y = s.h + 6;
+    }
+  }
+  drawResearch(s) {
+    const ctx = s.ctx, w = s.w, h = s.h;
+    if (!s.primed) { ctx.clearRect(0, 0, w, h); s.primed = true; }
+    ctx.fillStyle = 'rgba(10,10,15,0.085)';
+    ctx.fillRect(0, 0, w, h);
+    for (const p of s.parts) {
+      ctx.fillStyle = 'rgba(' + this.TEAL + ',0.22)';
+      ctx.beginPath(); ctx.arc(p.x, p.y, 1.1, 0, 6.2832); ctx.fill();
+    }
+  }
+
+  // ---------- CONTACT (low-opacity swarm) ----------
+  buildContact(s) {
+    const n = s.w < 768 ? 14 : 28;
+    s.parts = [];
+    for (let i = 0; i < n; i++) s.parts.push({ x: Math.random() * s.w, y: Math.random() * s.h, vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4, violet: Math.random() < 0.25 });
+  }
+  updateContact(s, dt) {
+    const f = dt / 16;
+    for (const p of s.parts) {
+      p.vx += (Math.random() - 0.5) * 0.02; p.vy += (Math.random() - 0.5) * 0.02;
+      p.vx = Math.max(-0.5, Math.min(0.5, p.vx)); p.vy = Math.max(-0.5, Math.min(0.5, p.vy));
+      p.x += p.vx * f; p.y += p.vy * f;
+      const m = 10;
+      if (p.x < -m) p.x = s.w + m; else if (p.x > s.w + m) p.x = -m;
+      if (p.y < -m) p.y = s.h + m; else if (p.y > s.h + m) p.y = -m;
+    }
+  }
+  drawContact(s) {
+    const ctx = s.ctx, w = s.w, h = s.h, P = s.parts;
+    ctx.clearRect(0, 0, w, h);
+    ctx.lineWidth = 1;
+    for (let i = 0; i < P.length; i++) {
+      const a = P[i];
+      for (let j = i + 1; j < P.length; j++) {
+        const b = P[j], dx = b.x - a.x, dy = b.y - a.y, d2 = dx * dx + dy * dy;
+        if (d2 < 110 * 110) { const al = (1 - Math.sqrt(d2) / 110) * 0.3; ctx.strokeStyle = 'rgba(' + this.TEAL + ',' + al + ')'; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+    }
+    for (const a of P) {
+      ctx.fillStyle = 'rgba(' + (a.violet ? this.VIOLET : this.TEAL) + ',0.7)';
+      ctx.beginPath(); ctx.arc(a.x, a.y, 1.6, 0, 6.2832); ctx.fill();
+    }
+  }
+
+  tick(dt) {
+    const S = this.sys;
+    if (S.hero.enabled && S.hero.parts) { this.updateHero(S.hero, dt); this.drawHero(S.hero); }
+    if (S.portrait.enabled && S.portrait.pts) { this.updatePortrait(S.portrait, dt); this.drawPortrait(S.portrait); }
+    if (S.projects.enabled && S.projects.nodes) { this.updateProjects(S.projects, dt); this.drawProjects(S.projects); }
+    if (S.research.enabled && S.research.parts) { this.updateResearch(S.research, dt); this.drawResearch(S.research); }
+    if (S.contact.enabled && S.contact.parts) { this.updateContact(S.contact, dt); this.drawContact(S.contact); }
+  }
+
+  renderVals() {
+    const expanded = this.state.expanded;
+    const teal = this.TEAL || '0,229,204';
+    const projectNodes = this.PROJECTS.map((p, i) => {
+      const ex = expanded === i;
+      return {
+        title: p.title, desc: p.desc, stack: p.stack, link: p.link, linkLabel: p.linkLabel,
+        onEnter: () => this.setState({ expanded: i }),
+        onLeave: () => this.setState({ expanded: null }),
+        wrapStyle: {
+          position: 'absolute', left: 0, top: 0,
+          width: ex ? 246 : 16, height: ex ? 168 : 16,
+          zIndex: ex ? 40 : 12, cursor: 'pointer',
+          transition: 'width .34s cubic-bezier(.2,.7,.2,1), height .34s cubic-bezier(.2,.7,.2,1)'
+        },
+        dotStyle: {
+          position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)',
+          width: 13, height: 13, borderRadius: '50%', background: 'rgb(' + teal + ')',
+          opacity: ex ? 0 : 1, transition: 'opacity .22s', boxSizing: 'border-box'
+        },
+        labelStyle: {
+          position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,16px)',
+          whiteSpace: 'nowrap', fontSize: 12.5, fontWeight: 500, letterSpacing: '.01em',
+          color: 'rgba(233,237,242,0.78)', pointerEvents: 'none',
+          opacity: ex ? 0 : 1, transition: 'opacity .2s'
+        },
+        cardStyle: {
+          position: 'absolute', left: 0, top: 0, width: '100%', height: '100%',
+          padding: 16, display: 'flex', flexDirection: 'column', gap: 9,
+          background: 'rgba(15,16,25,0.96)', border: '1px solid rgba(' + teal + ',0.38)',
+          borderRadius: 12, overflow: 'hidden',
+          opacity: ex ? 1 : 0, transform: ex ? 'scale(1)' : 'scale(0.82)',
+          transformOrigin: 'center', pointerEvents: ex ? 'auto' : 'none',
+          transition: 'opacity .28s, transform .28s'
+        }
+      };
+    });
+    return {
+      heroCanvas: this.heroCanvas,
+      portraitCanvas: this.portraitCanvas,
+      projectsCanvas: this.projectsCanvas,
+      projectsContainer: this.projectsContainer,
+      researchCanvas: this.researchCanvas,
+      contactCanvas: this.contactCanvas,
+      navRef: this.navRef,
+      projectNodes
+    };
+  }
+}
+</script>
 </body>
 </html>
