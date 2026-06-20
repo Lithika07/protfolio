@@ -28,7 +28,7 @@
           <span style="position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#00e5cc;animation:corepulse 2.6s ease-in-out infinite;"></span>
         </span>
       </span>
-      <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.3em;color:#00e5cc;text-transform:uppercase;">swarm coordination</span>
+      <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.3em;color:#00e5cc;text-transform:uppercase;">autonomous systems</span>
     </a>
     <div style="display:flex;align-items:center;gap:clamp(18px,3vw,38px);">
       <a href="#about" style="font-size:13.5px;letter-spacing:.02em;color:rgba(233,237,242,0.6);text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">About</a>
@@ -84,8 +84,9 @@
       </div>
       <div style="flex:1 1 320px;min-width:280px;display:flex;justify-content:center;">
         <div style="position:relative;width:100%;max-width:400px;aspect-ratio:1/1.08;border:1px solid rgba(0,229,204,0.14);border-radius:14px;overflow:hidden;background:linear-gradient(180deg,rgba(0,229,204,0.03),rgba(168,85,247,0.03));">
-          <canvas ref="{{ portraitCanvas }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
-          <div style="position:absolute;left:14px;bottom:12px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.16em;color:rgba(233,237,242,0.32);">Live · Multi-UAV Formation</div>
+          <img src="./portrait.jpg" alt="Lithika" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.75;mix-blend-mode:luminosity;">
+          <canvas ref="{{ portraitCanvas }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;"></canvas>
+          <div style="position:absolute;left:14px;bottom:12px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.16em;color:rgba(233,237,242,0.32);z-index:2;">Live · Multi-UAV Formation</div>
         </div>
       </div>
     </div>
@@ -216,7 +217,7 @@
         <div style="display:flex;align-items:baseline;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
           <span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:15px;line-height:1;transform:translateY(5px);">▸</span>
           <span style="flex:1 1 auto;display:flex;flex-direction:column;gap:7px;">
-            <span style="font-size:clamp(16px,2vw,20px);font-weight:400;color:#eef2f6;letter-spacing:-0.01em;line-height:1.3;">Foundational Study of Topological Indicators &amp; Neural Vision Models for Enhanced UAV Navigation</span>
+            <a href="https://ieeexplore.ieee.org/document/11544666/" target="_blank" rel="noopener" style="font-size:clamp(16px,2vw,20px);font-weight:400;color:#eef2f6;letter-spacing:-0.01em;line-height:1.3;text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">Foundational Study of Topological Indicators &amp; Neural Vision Models for Enhanced UAV Navigation</a>
             <span style="font-size:13px;font-weight:300;line-height:1.55;color:rgba(233,237,242,0.5);">Achieved 88% Navigation Accuracy on the EuRoC MAV Dataset with Lower Compute Than Traditional SLAM</span>
           </span>
           <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.14em;color:rgba(233,237,242,0.58);min-width:108px;text-align:right;text-transform:uppercase;">IEEE ICBDML</span>
@@ -225,7 +226,7 @@
         <div style="display:flex;align-items:baseline;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
           <span style="flex:none;color:#00e5cc;font-family:ui-monospace,Menlo,monospace;font-size:15px;line-height:1;transform:translateY(5px);">▸</span>
           <span style="flex:1 1 auto;display:flex;flex-direction:column;gap:7px;">
-            <span style="font-size:clamp(16px,2vw,20px);font-weight:400;color:#eef2f6;letter-spacing:-0.01em;line-height:1.3;">Machine Learning Models for Short-Term Weather Forecasting</span>
+            <a href="https://ieeexplore.ieee.org/document/11544825" target="_blank" rel="noopener" style="font-size:clamp(16px,2vw,20px);font-weight:400;color:#eef2f6;letter-spacing:-0.01em;line-height:1.3;text-decoration:none;transition:color .2s;" style-hover="color:#00e5cc;">Machine Learning Models for Short-Term Weather Forecasting</a>
             <span style="font-size:13px;font-weight:300;line-height:1.55;color:rgba(233,237,242,0.5);">Regression &amp; Ensemble Models for Hourly Prediction on Historical Meteorological Data</span>
           </span>
           <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.14em;color:rgba(233,237,242,0.58);min-width:108px;text-align:right;text-transform:uppercase;">IEEE ICBDML</span>
@@ -248,7 +249,7 @@
           <a href="https://github.com/Lithika07" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(233,237,242,0.16);border-radius:999px;padding:11px 20px;font-size:14px;color:rgba(233,237,242,0.82);transition:border-color .2s,color .2s;" style-hover="border-color:#00e5cc;color:#00e5cc;">
             <span style="width:7px;height:7px;border-radius:50%;background:#00e5cc;flex:none;"></span>github.com/Lithika07
           </a>
-          <a href="https://www.linkedin.com/in/lithika-s-a8bb23294" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(233,237,242,0.16);border-radius:999px;padding:11px 20px;font-size:14px;color:rgba(233,237,242,0.82);transition:border-color .2s,color .2s;" style-hover="border-color:#00e5cc;color:#00e5cc;">
+          <a href="https://linkedin.com/in/lithika-s" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid rgba(233,237,242,0.16);border-radius:999px;padding:11px 20px;font-size:14px;color:rgba(233,237,242,0.82);transition:border-color .2s,color .2s;" style-hover="border-color:#00e5cc;color:#00e5cc;">
             <span style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex:none;"></span>linkedin
           </a>
         </div>
@@ -779,7 +780,7 @@ class Component extends DCLogic {
         onLeave: () => this.setState({ expanded: null }),
         wrapStyle: {
           position: 'absolute', left: 0, top: 0,
-          width: ex ? 246 : 16, height: ex ? 168 : 16,
+          width: ex ? 280 : 16, height: ex ? 240 : 16,
           zIndex: ex ? 40 : 12, cursor: 'pointer',
           transition: 'width .34s cubic-bezier(.2,.7,.2,1), height .34s cubic-bezier(.2,.7,.2,1)'
         },
